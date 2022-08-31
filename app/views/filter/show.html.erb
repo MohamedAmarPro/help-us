@@ -1,0 +1,13 @@
+<%# <%if cookies[:categories] %>
+  <h1>Thanks</h1>
+<%# <% else %>
+
+  <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
+    <%= f.input :toto %>
+    <%= f.input :custom_field, :as => :boolean, :input_html => { :checked => "checked" } %>
+    <%= f.submit %>
+  <% end %>
+<%# <% end %>
+
+
+<%= console %>
