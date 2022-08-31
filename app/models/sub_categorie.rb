@@ -1,4 +1,4 @@
 class SubCategorie < ApplicationRecord
-  has_many :associations, dependent: :destroy
+  has_many :organizations, dependent: :destroy
   belongs_to :categories
 end
