@@ -1,15 +1,16 @@
 class FilterController < ApplicationController
   def show
     @categories = Category.all
+    @sub_categories = SubCategory.all
   end
 
   def categories
-    cookies[:categories] = params[:filter_categories][:toto]
+  cookies[:categories] = params[:filter_categories][:categories]
+  redirect_to filter_path
   end
 
   def sub_categories
   end
-
 end
 
 

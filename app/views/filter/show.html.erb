@@ -1,13 +1,31 @@
-<%# <%if cookies[:categories] %>
-  <h1>Thanks</h1>
-<%# <% else %>
+<%if cookies[:categories] %>
+  <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
+   <%= f.input :categories,
+                  legend_tag: false,
+                  collection: @sub_categories,
+                  wrapper_html: { class: 'cards_category' },
+                  as: :check_boxes,
+                  include_hidden: false,
+                  input_html: { class: "d-none" },
+                  label_method: lambda { |category| render 'shared/card_categorie', category: category }
+                  %>
+    <%= f.submit %>
+    <% end %>
+<%else%>
+
 
   <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
-    <%= f.input :toto %>
-    <%= f.input :custom_field, :as => :boolean, :input_html => { :checked => "checked" } %>
+   <%= f.input :categories,
+                  legend_tag: false,
+                  collection: @categories,
+                  wrapper_html: { class: 'cards_category' },
+                  as: :check_boxes,
+                  include_hidden: false,
+                  input_html: { class: "d-none" },
+                  label_method: lambda { |category| render 'shared/card_categorie', category: category }
+                  %>
     <%= f.submit %>
-  <% end %>
-<%# <% end %>
-
+    <% end %>
+<%end%>
 
 <%= console %>
