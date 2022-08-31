@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_102624) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_145503) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,7 +42,35 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_102624) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "associations", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.integer "amount"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "organization_id", null: false
+    t.index ["organization_id"], name: "index_donations_on_organization_id"
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.text "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "organization_id", null: false
+    t.index ["organization_id"], name: "index_events_on_organization_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -53,37 +81,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_102624) do
     t.string "name"
     t.string "description"
     t.bigint "sub_category_id", null: false
-    t.index ["email"], name: "index_associations_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_associations_on_reset_password_token", unique: true
-    t.index ["sub_category_id"], name: "index_associations_on_sub_category_id"
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "donations", force: :cascade do |t|
-    t.integer "amount"
-    t.bigint "user_id", null: false
-    t.bigint "association_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["association_id"], name: "index_donations_on_association_id"
-    t.index ["user_id"], name: "index_donations_on_user_id"
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.date "start_date"
-    t.date "end_date"
-    t.text "location"
-    t.bigint "association_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["association_id"], name: "index_events_on_association_id"
+    t.index ["email"], name: "index_organizations_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_organizations_on_reset_password_token", unique: true
+    t.index ["sub_category_id"], name: "index_organizations_on_sub_category_id"
   end
 
   create_table "sub_categories", force: :cascade do |t|
@@ -111,21 +111,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_102624) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "pseudo"
     t.string "first_name"
     t.string "last_name"
     t.date "birth_date"
     t.string "address"
+    t.string "pseudo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "associations", "sub_categories"
-  add_foreign_key "donations", "associations"
+  add_foreign_key "donations", "organizations"
   add_foreign_key "donations", "users"
-  add_foreign_key "events", "associations"
+  add_foreign_key "events", "organizations"
+  add_foreign_key "organizations", "sub_categories"
   add_foreign_key "sub_categories", "categories"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
