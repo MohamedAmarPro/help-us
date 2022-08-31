@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container" data-controller="scroll" data-scroll-target="homepage" data-action="scroll@window->scroll#scrollDown">
+    <h1 class="home-title">Help Us</h1>
+    <div class="home-bottom">
+        <p class="home-description">La force du don humanitaire ne demeure pas que dans le montant, mais bien dans le bon emploi du montant.</p>
+        <div class="home-icon">
+            <p>Swipe</p>
+            <iconify-icon icon="bi:arrow-down-circle"></iconify-icon>
+        </div>
+    </div>
+</div>
+<div class="container" data-controller="scroll" data-scroll-target="homepage" data-action="scroll@window->scroll#scrollUp">
+    <div class="home-cards">
+        <div class="donate-card">
+            <div class="card-icon-title">
+                <iconify-icon class="icons-home" icon="bxs:donate-heart" style="color: white;"></iconify-icon>
+                <h2>Donate</h2>
+            </div>
+            <p>Thanks to Help Us, you can make a donation to help many associations</p>
+            <button class="btn btn-dark home-cards-button">Donate</button>
+        </div>
+        <div class="event-card">
+            <div class="card-icon-title">
+                <iconify-icon class="icons-home" icon="material-symbols:event" style="color: white;"></iconify-icon>
+                <h2>Events</h2>
+            </div>
+            <p>You can also decide to see all events available near you and choose to partipate or not to each event</p>
+            <button class="btn btn-dark home-cards-button">Events</button>
+        </div>
+        <div class="association-card">
+            <iconify-icon class="icons-home" icon="simple-icons:worldhealthorganization" style="color: white"></iconify-icon>
+            <h2>Association</h2>
+            <p>If you are an association, you can add your asso to our database and also create an event to find some benevolents</p>
+            <button class="btn btn-dark home-cards-button">Association</button>
+        </div>
+    </div>
+</div>

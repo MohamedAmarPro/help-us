@@ -1,1 +1,78 @@
 // Specific CSS for your home-page
+.container {
+    background-image: url(https://images.unsplash.com/photo-1615389854143-8f2d4d6a0423?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.navbar {
+    display: none;
+}
+
+.home-title {
+    font-family: $headers-font;
+    font-size: 48px;
+}
+
+.home-bottom {
+    display: contents;
+    font-family: $home-font;
+}
+.home-description {
+    width: 300px;
+    align-self: center;
+    font-size: 26px;
+    border-radius: 8px;
+    padding: 12px;
+    // background-color: rgba($light-blue, 0.20);
+    text-shadow: 1px 1px $white;
+}
+
+.home-icon {
+    font-size: 21px
+}
+
+.home-icon p {
+    margin: 0;
+}
+
+iconify-icon {
+    font-size: 32px
+}
+
+.home-cards {
+    display: contents;
+}
+
+.donate-card, .event-card, .association-card {
+    width: 250px;
+    height: 350px;
+    margin: 8px auto;
+    padding: 8px;
+    background-color: rgba($light-blue, 0.65);
+    border-radius: 12px;
+    color: $white;
+    position: relative;
+}
+
+.donate-card h2, .event-card h2, .association-card h2 {
+    font-family: $body-font;
+}
+
+.donate-card p, .event-card p, .association-card p {
+    font-family: $home-font;
+}
+
+.home-cards-button {
+    border-radius: 8px;
+    width: 125px;
+    font-family: $button-font;
+    position: absolute;
+    bottom: 8px;
+    left: 65px;
+}
