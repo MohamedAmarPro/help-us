@@ -38,12 +38,37 @@ puts '------------------ CREATING ORGANIZATIONS --------------------------------
 
 puts 'Waiting...'
 
+environment = Category.create(name: "Environment")
+animals = Category.create(name: "Animals")
+humanitarian = Category.create(name: "Humanitarian")
+employment = Category.create(name: "Employment")
+education = Category.create(name: "Education")
+solidarity = Category.create(name: "Solidarity")
+culture = Category.create(name: "Culture")
+
+SubCategory.create(name: "Oceans", category: environment)
+SubCategory.create(name: "Forest", category: environment)
+SubCategory.create(name: "Cats", category: animals)
+SubCategory.create(name: "Bees", category: animals)
+SubCategory.create(name: "Homelessness", category: solidarity)
+SubCategory.create(name: "Children", category: solidarity)
+SubCategory.create(name: "Jobs", category: employment)
+SubCategory.create(name: "Unions", category: employment)
+SubCategory.create(name: "Painting", category: culture)
+SubCategory.create(name: "Drinking water", category: humanitarian)
+SubCategory.create(name: "Famine", category: humanitarian)
+SubCategory.create(name: "Music", category: culture)
+SubCategory.create(name: "Illiteracy", category: education)
+SubCategory.create(name: "Teachers", category: education)
+
+puts 'Waiting...'
+
 file = URI.open('http://loremflickr.com/400/400/panda')
 organization = Organization.new(
   email: 'contact@wwf.fr',
   password: 'password',
   name: 'WWF',
-  sub_categorie: 'Oceans',
+  sub_category: SubCategory.find_by(name: "Forest"),
   description: 'For 60 years, WWF has worked to help people and nature thrive.
   As the world’s leading conservation organization, WWF works in nearly 100 countries.
   At every level, we collaborate with people around the world to develop and deliver innovative solutions
@@ -51,6 +76,35 @@ organization = Organization.new(
 )
 organization.photo.attach(io: file, filename: 'wwf.png', content_type: 'image/png')
 
+file2 = URI.open('http://loremflickr.com/400/400/kids')
+organization2 = Organization.new(
+  email: 'servicerelationdonateurs@unicef.fr',
+  password: 'password',
+  name: 'UNICEF',
+  sub_category: SubCategory.find_by(name: "Children"),
+  description: 'UNICEF works in over 190 countries and territories to save children’s lives,
+  to defend their rights, and to help them fulfil their potential,
+  from early childhood through adolescence. And we never give up.'
+)
+organization2.photo.attach(io: file2, filename: 'unicef.png', content_type: 'image/png')
+
+puts 'Waiting...'
+
+file3 = URI.open('http://loremflickr.com/400/400/meal')
+organization3 = Organization.new(
+  email: 'global.philanthropy@wfp.org.',
+  password: 'password',
+  name: 'World Food Programme',
+  sub_category: SubCategory.find_by(name: "Famine"),
+  description: "The World Food Programme is the food-assistance branch of the United Nations.
+  It is the world's largest humanitarian organization focused on hunger and food security,
+  and the largest provider of school meals. Founded in 1961,
+  it is headquartered in Rome and has offices in 80 countries."
+)
+organization3.photo.attach(io: file3, filename: 'wfp.png', content_type: 'image/png')
+
 puts '-------------------- ORGANIZATIONS CREATED ---------------------------------------------------'
 
 organization.save!
+organization2.save!
+organization3.save!

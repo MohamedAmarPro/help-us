@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_133647) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_145503) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,10 +51,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_133647) do
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
     t.bigint "user_id", null: false
-    t.bigint "association_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["association_id"], name: "index_donations_on_association_id"
+    t.bigint "organization_id", null: false
+    t.index ["organization_id"], name: "index_donations_on_organization_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -64,10 +64,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_133647) do
     t.date "start_date"
     t.date "end_date"
     t.text "location"
-    t.bigint "association_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["association_id"], name: "index_events_on_association_id"
+    t.bigint "organization_id", null: false
+    t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -111,20 +111,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_133647) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "pseudo"
     t.string "first_name"
     t.string "last_name"
     t.date "birth_date"
     t.string "address"
+    t.string "pseudo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "donations", "organizations", column: "association_id"
+  add_foreign_key "donations", "organizations"
   add_foreign_key "donations", "users"
-  add_foreign_key "events", "organizations", column: "association_id"
+  add_foreign_key "events", "organizations"
   add_foreign_key "organizations", "sub_categories"
   add_foreign_key "sub_categories", "categories"
   add_foreign_key "user_events", "events"
