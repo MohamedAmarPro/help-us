@@ -1,15 +1,21 @@
 class FilterController < ApplicationController
   def show
     @categories = Category.all
-    @sub_categories = SubCategory.all
+
+    if cookies[:categories]
+      categories_id = cookies[:categories].split(",")
+      @categories = Category.where(id: categories_id)
+    end
   end
 
   def categories
-  cookies[:categories] = params[:filter_categories][:categories]
-  redirect_to filter_path
+    cookies[:categories] = params[:filter_categories][:categories].join(",")
+    redirect_to filter_path
   end
 
   def sub_categories
+  cookies[:sub_categories] = params[:filter_sub_categories][:sub_categories].join(",")
+  redirect_to filter_path
   end
 end
 
