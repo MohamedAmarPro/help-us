@@ -1,8 +1,10 @@
-class Association < ApplicationRecord
+class Organization < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  belongs_to :sub_categories
   has_many :events
+  has_one_attached :photo
+  belongs_to :sub_category
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
