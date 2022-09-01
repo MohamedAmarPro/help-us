@@ -21,6 +21,7 @@ class FilterController < ApplicationController
   def sub_categories
     cookies[:sub_categories] = params[:filter_sub_categories][:sub_categories].join(",")
     redirect_to filter_path
+
   end
 
   def organizations
