@@ -10,7 +10,7 @@ export default class extends Controller {
 
   // scrollDown() {
   //   if ( window.scrollY > 50 )
-  //     window.scrollTo({top: 747, behavior: 'instant'})
+  //     window.scrollTo({top: 747, behavior: 'smooth'})
   //   end
   // }
 
