@@ -1,36 +1,42 @@
-<%if cookies[:categories] %>
-  <%= simple_form_for :filter_sub_categories, url: filter_sub_categories_path do |f|%>
-  <%@categories.each do |category| %>
-  <h1><%= category.name %></h1>
-    <%= f.input :sub_categories,
-                    legend_tag: false,
-                    collection: category.sub_categories,
-                    item_label_class: 'd-block',
-                    wrapper_html: { class: 'cards_category' },
-                    as: :check_boxes,
-                    include_hidden: false,
-                    input_html: { class: "d-none" },
-                    label_method: lambda { |category| render 'shared/card_categorie', category: category }
-                    %>
-    <% end %>
-    <%= f.submit %>
-    <% end %>
-<%else%>
-
-
-  <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
-   <%= f.input :categories,
-                  legend_tag: false,
-                  collection: @categories,
-                  item_label_class: 'd-block',
-                  wrapper_html: { class: 'cards_category' },
-                  as: :check_boxes,
-                  include_hidden: false,
-                  input_html: { class: "d-none" },
-                  label_method: lambda { |category| render 'shared/card_categorie', category: category }
-                  %>
-    <%= f.submit %>
-    <% end %>
-<%end%>
-
-<%= console %>
+<div class="mainpage">
+  <div class="container">
+    <%if cookies[:categories] %>
+      <%= simple_form_for :filter_sub_categories, url: filter_sub_categories_path do |f|%>
+        <%@categories.each do |category| %>
+        <h1><%= category.name %></h1>
+          <div class="scrollmenu">
+            <%= f.input :sub_categories,
+                          legend_tag: false,
+                          collection: category.sub_categories,
+                          item_label_class: 'd-block',
+                          wrapper_html: { class: 'cards_subcategory' },
+                          as: :check_boxes,
+                          include_hidden: false,
+                          input_html: { class: "d-none" },
+                          label_method: lambda { |category| render 'shared/card_categorie', category: category }
+                          %>
+          </div>
+          <% end %>
+        <div class="sticky">
+          <%= f.button :submit, 'Continue', class: "submit-btn" %>
+        </div>
+      <% end %>
+    <%else%>
+      <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
+        <%= f.input :categories,
+                        legend_tag: false,
+                        collection: @categories,
+                        item_label_class: 'd-block',
+                        wrapper_html: { class: 'cards_category' },
+                        as: :check_boxes,
+                        include_hidden: false,
+                        input_html: { class: "d-none" },
+                        label_method: lambda { |category| render 'shared/card_categorie', category: category }
+                        %>
+        <div class="sticky">
+          <%= f.button :submit, 'Continue', class: "submit-btn" %>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+ </div>
