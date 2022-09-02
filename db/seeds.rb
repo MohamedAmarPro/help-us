@@ -8,8 +8,10 @@
 
 require 'open-uri'
 
-puts '----------------- FAREWELL PREVIOUS USERS---------------------------------------------------'
+puts '----------------- FAREWELL PREVIOUS SEEDS---------------------------------------------------'
 User.destroy_all
+Organization.destroy_all
+Category.destroy_all
 
 puts 'Waiting...'
 
@@ -30,7 +32,6 @@ momo.photo.attach(io: user3, filename: 'Mohamed.png', content_type: 'image/png')
 puts '-------------------- USERS CREATED ---------------------------------------------------'
 
 puts '----------------- FAREWELL PREVIOUS USERS---------------------------------------------------'
-Organization.destroy_all
 
 puts 'Waiting...'
 

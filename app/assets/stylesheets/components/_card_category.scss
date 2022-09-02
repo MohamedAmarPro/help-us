@@ -18,6 +18,12 @@
   border: solid $white;
 }
 
+.card-category-click {
+  border: solid #ffffff !important;
+  border-width: 5px !important;
+  font-size: xx-large !important;
+}
+
 .cards_category {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -27,17 +33,6 @@
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
-
-// .scrollmenu {
-//   overflow: auto;
-//   white-space: nowrap;
-// }
-
-// .cards_subcategory {
-//   display: inline-block;;
-//   padding: 14px;
-//   text-align: center;
-// }
 
 .submit-btn {
   color: $white;

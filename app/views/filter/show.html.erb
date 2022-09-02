@@ -8,12 +8,12 @@
               <%= f.input :sub_categories,
                               legend_tag: false,
                               collection: category.sub_categories,
-                              item_label_class: 'd-block',
-                              wrapper_html: { class: 'cards_category' },
+                              # item_label_class: 'd-inline-block',
+                              wrapper_html: { class: 'cards_subcategory' },
                               as: :check_boxes,
                               include_hidden: false,
                               input_html: { class: "d-none" },
-                              label_method: lambda { |category| render 'shared/card_categorie', category: category }
+                              label_method: lambda { |category| render 'shared/card_subcategory', category: category }
                               %>
           </div>
           <% end %>
@@ -42,7 +42,7 @@
       <% end %>
     <%else%>
       <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
-        <%= f.input :categories,
+          <%= f.input :categories,
                         legend_tag: false,
                         collection: @categories,
                         item_label_class: 'd-block',
