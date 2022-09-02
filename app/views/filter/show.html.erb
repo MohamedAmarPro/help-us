@@ -22,41 +22,6 @@
         </div>
       <% end %>
     <% elsif cookies[:sub_categories] &&  cookies[:categories] %>
-      <%= simple_form_for :filter_organizations, url: filter_organizations_path do |f|%>
-        <%@sub_categories.each do |sub_category| %>
-          <h1><%= sub_category.name %></h1>
-            <%= f.input :sub_categories,
-                            legend_tag: false,
-                            collection: sub_category.organizations,
-                            item_label_class: 'd-block',
-                            wrapper_html: { class: 'cards_category' },
-                            as: :check_boxes,
-                            include_hidden: false,
-                            input_html: { class: "d-none" },
-                            label_method: lambda { |organization| render 'shared/organization', organization: organization }
-                            %>
-        <%end %>
-          <div class="sticky">
-            <%= f.button :submit, 'Confirm', class: "submit-btn" %>
-          </div>
-      <% end %>
-    <%else%>
-      <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
-          <%= f.input :categories,
-                        legend_tag: false,
-                        collection: @categories,
-                        item_label_class: 'd-block',
-                        wrapper_html: { class: 'cards_category' },
-                        as: :check_boxes,
-                        include_hidden: false,
-                        input_html: { class: "d-none" },
-                        label_method: lambda { |category| render 'shared/card_category', category: category }
-                        %>
-    <% end %>
-        <%= f.submit %>
-  <% end %>
-
-<% elsif cookies[:sub_categories] &&  cookies[:categories] %>
 
   <%= simple_form_for :filter_organizations, url: filter_organizations_path do |f|%>
     <div class="top-organization">
@@ -77,15 +42,12 @@
                     label_method: lambda { |organization| render 'shared/organization', organization: organization }
                        %>
     <%end %>
-    <div class="d-flex justify-content-evenly">
+    <div class="sticky">
         <%= link_to '<- Go back', filter_reset_path, data: {turbo_method: :post}, class: "btn btn-dark", style: "border-radius: 12px" %>
         <%= f.submit 'Cart ->', class: "btn btn-dark", style: "border-radius: 12px" %>
     </div>
   <% end %>
-
-<%else%>
-
-
+    <%else%>
   <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
    <%= f.input :categories,
                   legend_tag: false,
@@ -97,13 +59,10 @@
                   input_html: { class: "d-none" },
                   label_method: lambda { |category| render 'shared/card_category', category: category }
                   %>
-    <%= f.submit %>
-  <% end %>
-<%end%>
         <div class="sticky">
           <%= f.button :submit, 'Continue', class: "submit-btn" %>
         </div>
-      <% end %>
-    <%end%>
+  <% end %>
+<%end%>
   </div>
 </div>
