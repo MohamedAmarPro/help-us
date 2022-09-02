@@ -28,6 +28,19 @@ class FilterController < ApplicationController
     cookies[:organizations] = params[:filter_organizations][:organizations].join(",")
     redirect_to filter_path
   end
+
+  def reset
+    if cookies[:organizations]
+      cookies.delete(:organizations)     
+    elsif cookies[:sub_categories]
+      cookies.delete(:sub_categories)      
+    elsif cookies[:categories]
+      cookies.delete(:categories)
+    end
+    redirect_to filter_path
+  end
+
+
 end
 
 
@@ -38,3 +51,5 @@ end
  # if cookies[:categories]
     #   @categories = Category.where(name: cookies[:categories])
     # end
+"1&4&7"
+"1,4,7"
