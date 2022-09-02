@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post "filter/categories", to: "filter#categories"
   post "filter/sub_categories", to: "filter#sub_categories"
   post "filter/organizations", to: "filter#organizations"
+  post "filter/reset", to: "filter#reset"
 end
