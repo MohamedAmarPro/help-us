@@ -1,5 +1,11 @@
 <div class="mainpage">
   <div class="container">
-    <%= render "shared/filter_categories" %>
+    <%if cookies[:categories] && cookies[:sub_categories].nil? %>
+     <%= render "shared/filter_cookies_subcategories" %>
+    <% elsif cookies[:sub_categories] && cookies[:categories] %>
+      <%= render "shared/filter_cookies_organizations" %>
+    <% else %>
+      <%= render "shared/filter_cookies_categories" %>
+    <% end %>
   </div>
 </div>
