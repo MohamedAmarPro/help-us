@@ -8,6 +8,7 @@
 .top-organization {
     display: flex;
     justify-content: space-between;
+    font-family: $headers-font;
     align-items: center;
     margin: 24px 8px 6px 8px;
 }
@@ -16,6 +17,7 @@
   margin: 24px 0 16px 336px
 }
 
-// .welcome {
-//   margin-top: 24px;
-// }
+.welcome {
+  font-size: 32px;
+  font-weight: bold;
+}
