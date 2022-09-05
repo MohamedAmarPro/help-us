@@ -42,14 +42,3 @@ class FilterController < ApplicationController
 
 
 end
-
-
-# ["environment", "social"]
-
-# cookies[:categories] = [1, 4, 7]
-
- # if cookies[:categories]
-    #   @categories = Category.where(name: cookies[:categories])
-    # end
-"1&4&7"
-"1,4,7"
