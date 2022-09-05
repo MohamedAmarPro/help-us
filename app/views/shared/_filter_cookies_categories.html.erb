@@ -3,18 +3,18 @@
     <h1><%= "Hello"%> <%= current_user.first_name %><%= ". It's a pleasure to have you with us. What do you care about ?" %></h1>
     <%= render "shared/user_photo" %>
   </div>
-  <%= f.input :categories,
-              legend_tag: false,
-              collection: @categories,
-              item_label_class: 'd-block',
-              wrapper_html: { class: 'cards_category' },
-              as: :check_boxes,
-              include_hidden: false,
-              input_html: { class: "d-none" },
-              label_method: lambda { |category| render 'shared/card_category', category: category }
+   <%= f.input :categories,
+                legend_tag: false,
+                collection: @categories,
+                item_label_class: 'd-block',
+                wrapper_html: { class: 'cards_category' },
+                as: :check_boxes,
+                include_hidden: false,
+                input_html: { class: "d-none" },
+                label_method: lambda { |category| render 'shared/card_category', category: category }
   %>
-  <div class="sticky d-flex justify-content-evenly">
-    <%= link_to "Back", root_path, class:'submit-btn'  %>
-    <%= f.button :submit, 'Continue', class: "submit-btn" %>
+  <div class="sticky d-flex justify-content-center gap-3" data-controller="hide-button" data-action="scroll@window->hide-button#scrollDown">
+      <%= link_to "Back", root_path, class:'submit-btn'%>
+      <%= f.button :submit, 'Continue', class: "submit-btn" %>
   </div>
 <% end %>
