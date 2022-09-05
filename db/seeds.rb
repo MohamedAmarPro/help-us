@@ -20,13 +20,13 @@ puts '------------------ CREATING USERS ----------------------------------------
 puts 'Waiting...'
 
 user = URI.open('https://avatars.githubusercontent.com/u/78362026?v=4')
-alan = User.create(email: 'alan@lewagon.com', password: 'password', pseudo: 'Mitaka')
+alan = User.create(email: 'alan@lewagon.com', password: 'password', pseudo: 'Mitaka', first_name: 'Alan', last_name: 'Laurier', birth_date: '1997/12/09', address: 'Wattignies')
 alan.photo.attach(io: user, filename: 'Alan.png', content_type: 'image/png')
 user2 = URI.open('https://avatars.githubusercontent.com/u/63310460?v=4')
-titou = User.create(email: 'cosy@lewagon.com', password: 'password', pseudo: 'Titou')
+titou = User.create(email: 'cosy@lewagon.com', password: 'password', pseudo: 'Titou', first_name: 'Titouan', last_name: 'Andritsos', birth_date: '1990/03/22', address: 'Nantes')
 titou.photo.attach(io: user2, filename: 'Titouan.png', content_type: 'image/png')
 user3 = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1657602360/yndjqzd5dulcqltvwpzm.jpg')
-momo = User.create(email: 'momo@lewagon.com', password: 'password', pseudo: 'MomoMerko')
+momo = User.create(email: 'momo@lewagon.com', password: 'password', pseudo: 'MomoMerko', first_name: 'Mohamed', last_name: 'Ait Amar', birth_date: '1993/02/19', address: 'Marrakech')
 momo.photo.attach(io: user3, filename: 'Mohamed.png', content_type: 'image/png')
 
 puts '-------------------- USERS CREATED ---------------------------------------------------'

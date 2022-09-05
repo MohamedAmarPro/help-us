@@ -1,0 +1,21 @@
+<%= simple_form_for :filter_sub_categories, url: filter_sub_categories_path do |f|%>
+  <% @categories.each do |category| %>
+    <div class="scrollmenu">
+      <h1><%= category.name %></h1>
+      <%= f.input :sub_categories,
+                  legend_tag: false,
+                  collection: category.sub_categories,
+                  # item_label_class: 'd-inline-block',
+                  wrapper_html: { class: 'cards_subcategory' },
+                  as: :check_boxes,
+                  include_hidden: false,
+                  input_html: { class: "d-none" },
+                  label_method: lambda { |category| render 'shared/card_subcategory', category: category }
+      %>
+    </div>
+  <% end %>
+  <div class="sticky d-flex justify-content-evenly">
+    <%= link_to "Back", filter_reset_path, data: {turbo_method: :post}, class: "submit-btn"%>
+    <%= f.button :submit, 'Continue', class: "submit-btn" %>
+  </div>
+<% end %>
