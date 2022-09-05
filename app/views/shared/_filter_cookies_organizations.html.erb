@@ -1,7 +1,9 @@
 <%= simple_form_for :filter_organizations, url: filter_organizations_path do |f|%>
   <div class="top-organization">
     <h1><%= "Available organizations: " %></h1>
-    <%= render "shared/user_photo" %>
+    <div class="pic">
+      <%= render "shared/user_photo" %>
+    </div>
   </div>
 
   <% @sub_categories.each do |sub_category| %>

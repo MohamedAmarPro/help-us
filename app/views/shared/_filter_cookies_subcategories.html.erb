@@ -1,8 +1,11 @@
 <%= simple_form_for :filter_sub_categories, url: filter_sub_categories_path do |f|%>
-  <%= render "shared/user_photo" %>
+  <div class="top-organization">
+    <h1 class="welcome"><em>Tell us more <%= current_user.first_name %></em></h1>
+    <%= render "shared/user_photo" %>
+  </div>
   <% @categories.each do |category| %>
+    <h1><%= category.name %></h1>
     <div class="scrollmenu">
-      <h1><%= category.name %></h1>
       <%= f.input :sub_categories,
                   legend_tag: false,
                   collection: category.sub_categories,
