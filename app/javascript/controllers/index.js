@@ -9,3 +9,6 @@ application.register("click-button", ClickButtonController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import HideButtonController from "./hide_button_controller"
+application.register("hide-button", HideButtonController)
