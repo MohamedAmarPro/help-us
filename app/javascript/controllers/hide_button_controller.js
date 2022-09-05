@@ -7,7 +7,7 @@ export default class extends Controller {
     this.lastScroll = window.pageYOffset;
   }
 
-  scrollDown(){
+  scrollDown() {
     let st = window.pageYOffset
      if (st < this.lastScroll){
       console.log("UP")
@@ -18,6 +18,18 @@ export default class extends Controller {
       this.element.style.bottom = "20px";
      }
     this.lastScroll = st
+  }
 
+  scrollNav() {
+    let st = window.pageYOffset
+     if (st < this.lastScroll){
+      console.log("UP")
+      this.element.style.display = "flex";
+     }
+     else if (st > this.lastScroll) {
+      console.log("DOWN")
+      this.element.style.display = "none";
+     }
+    this.lastScroll = st
   }
 }
