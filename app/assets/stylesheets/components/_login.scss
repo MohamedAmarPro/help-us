@@ -1,0 +1,36 @@
+.login {
+  max-width: 340px;
+  margin-top: 250px;
+  margin-bottom: 305px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.login h1 {
+  font-style: italic;
+}
+
+.login-btn {
+  color: $white;
+  background-color: $black;
+  border-radius: 25px;
+  font-family: $button-font;
+  font-size: x-large;
+  bottom: 5;
+  width: 100px;
+}
+
+.login-btn:hover {
+  font-weight: bolder;
+  background-color: white;
+}
+
+.form-actions {
+  margin-bottom: 10px;
+}
+
+// .loginbg {
+//   background-image: url(https://images.unsplash.com/photo-1529598993581-b025f3f79f9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
+//   background-size: 100vh;
+// }
