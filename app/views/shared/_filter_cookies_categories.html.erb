@@ -1,6 +1,6 @@
 <%= simple_form_for :filter_categories, url: filter_categories_path do |f|%>
   <div class="top-organization">
-    <h1><%= "Hello"%> <%= current_user.first_name %><%= ". It's a pleasure to have you with us. What do you care about ?" %></h1>
+    <h1 class="welcome"><em>Hello <%= current_user.first_name %>. It's a pleasure to have you with us !</em></h1>
     <%= render "shared/user_photo" %>
   </div>
    <%= f.input :categories,
