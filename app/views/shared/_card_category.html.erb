@@ -1,5 +1,5 @@
   <div class="card-category" data-controller="click-button" data-action="click->click-button#highlight" style="background-image: linear-gradient(rgba(0,0,0,0.3),
   rgba(0,0,0,0.3)),
-  url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  url('<%= cl_image_path category.photo.key, height: 300, crop: :fill if category.photo.attached?%>')">
     <%= category.name %>
   </div>
