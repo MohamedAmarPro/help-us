@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post "filter/reset", to: "filter#reset"
 
   resources :events
+
+  resources :donations, only: :create
 end

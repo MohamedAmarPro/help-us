@@ -82,3 +82,9 @@ gem "cloudinary"
 
 # geocoder
 gem "geocoder"
+
+# gem money-rails
+gem 'money-rails'
+
+# gem stripe
+gem 'stripe'

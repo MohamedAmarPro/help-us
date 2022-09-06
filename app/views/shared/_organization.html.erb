@@ -2,4 +2,7 @@
   <%= cl_image_tag organization.photo.key %>
   <h2><%=organization.name %></h2>
   <p><%= organization.description %></p>
+
+   <input name="organizations[<%=organization.id%>][price]" value=10>
+   <input name="organizations[<%=organization.id%>][status]" value=false data-click-button-target="status">
   </div>
