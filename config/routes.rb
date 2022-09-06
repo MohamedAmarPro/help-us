@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :events
 
-  resources :donations, only: :create
+  resources :donations, only: [:create, :show]
 end

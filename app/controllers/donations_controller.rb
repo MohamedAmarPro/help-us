@@ -1,24 +1,41 @@
 class DonationsController < ApplicationController
    def create
-      raise
-#     orga_donation =
+
+    donation = Donation.create!(state: "pending", user: current_user)
+
+    line_items = params[:organizations].map do |orga|
+      if orga[:status] == "true"
+        organization = Organization.find(orga[:id].to_i)
+       { name: organization.name, amount: orga[:price].to_i, currency: 'eur', quantity: 1 }
+      end
+    end.compact
+
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: line_items,
+      success_url: donation_url(donation),
+      cancel_url: donation_url(donation)
+    )
+
+    donation.update(checkout_session_id: session.id)
+
+    raise
+
+
+    # params_orga = params[:organizations].map {|orga| {id: orga[:id], price: orga[:price], status: orga[:status]}}
+    # params_orga.each do |param|
+
+    #   if param[:status] == "true"
+    #     organization = Organization.find(param[:id])
+    #     orga_dona = OrgaDona.create(price: param[:price], organization: organization, donation: donation)
+    #   end
+
+    # end
+
+
+
 #     donation = Donation.new
 #     orga_dona = Donation.create!(: teddy,  amount: teddy.price, state: 'pending', user: current_user)
-
-#   session = Stripe::Checkout::Session.create(
-#     payment_method_types: ['card'],
-#     line_items: [{
-#       name: teddy.sku,
-#       images: [teddy.photo_url],
-#       amount: teddy.price_cents,
-#       currency: 'eur',
-#       quantity: 1
-#     }],
-#     success_url: order_url(order),
-#     cancel_url: order_url(order)
-#   )
-
-#   order.update(checkout_session_id: session.id)
 
 #   redirect_to new_order_payment_path(order)
  end

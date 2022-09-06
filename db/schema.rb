@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_06_101520) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_06_151702) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,11 +53,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_101520) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "organization_id", null: false
     t.string "state"
     t.string "checkout_session_id"
     t.integer "amount_cents", default: 0, null: false
-    t.index ["organization_id"], name: "index_donations_on_organization_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -73,6 +71,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_101520) do
     t.float "latitude"
     t.float "longitude"
     t.index ["organization_id"], name: "index_events_on_organization_id"
+  end
+
+  create_table "orga_donas", force: :cascade do |t|
+    t.bigint "donation_id", null: false
+    t.bigint "organization_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.index ["donation_id"], name: "index_orga_donas_on_donation_id"
+    t.index ["organization_id"], name: "index_orga_donas_on_organization_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -129,9 +137,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_101520) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "donations", "organizations"
   add_foreign_key "donations", "users"
   add_foreign_key "events", "organizations"
+  add_foreign_key "orga_donas", "donations"
+  add_foreign_key "orga_donas", "organizations"
   add_foreign_key "organizations", "sub_categories"
   add_foreign_key "sub_categories", "categories"
   add_foreign_key "user_events", "events"

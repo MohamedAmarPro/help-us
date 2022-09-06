@@ -3,6 +3,7 @@
   <h2><%=organization.name %></h2>
   <p><%= organization.description %></p>
 
-   <input name="organizations[<%=organization.id%>][price]" value=10>
-   <input name="organizations[<%=organization.id%>][status]" value=false data-click-button-target="status">
+   <input name="organizations[][price]" value=10 hidden>
+   <input name="organizations[][id]" value=<%=organization.id%> hidden>
+   <input name="organizations[][status]" value=false data-click-button-target="status" hidden>
   </div>
