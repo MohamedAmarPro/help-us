@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :organizations
-  devise_for :users
+  devise_for :organizations, controllers: { sessions: "organizations/sessions" }
+  devise_for :users, controllers: { sessions: "users/sessions" }
   root to: "pages#home"
 
   get "filter", to: "filter#show"
@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post "filter/reset", to: "filter#reset"
 
   resources :events
+  resources :organizations
 end

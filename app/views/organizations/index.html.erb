@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="welcome mt-5">Hello!</h1>
+  <h2 class="mt-5"> Your Organization :</h2>
+  <div class="card-organization mt-5" data-controller="click-button" data-action="click->click-button#highlightOrg">
+    <%= cl_image_tag @organization.photo.key, crop: :fill if @organization.photo.attached? %>
+    <div class="space mt-4">
+      <h2><%= @organization.name %></h2>
+      <p><%= @organization.description %></p>
+    </div>
+  </div>
+</div>

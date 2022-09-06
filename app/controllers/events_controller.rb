@@ -13,16 +13,10 @@ class EventsController < ApplicationController
   end
 
   def create
-
     @event = Event.new(params_events)
     @orga = Organization.first
     @event.organization = @orga
-
-
-
     if @event.save
-
-
       redirect_to events_path
     else
       render :new, status: :unprocessable_entity
@@ -34,7 +28,6 @@ class EventsController < ApplicationController
 
   def edit
   end
-
 
   private
 
