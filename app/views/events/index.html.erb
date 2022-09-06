@@ -1,0 +1,8 @@
+<h1>Events#index</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+
+
+<% @events.each do |event|%>
+<%= event.name %>
+<%end %>
+<%= link_to "share your event", new_event_path, class: "btn btn-dark mt-3 mb-3"%>

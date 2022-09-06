@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post "filter/sub_categories", to: "filter#sub_categories"
   post "filter/organizations", to: "filter#organizations"
   post "filter/reset", to: "filter#reset"
+
+  resources :events
 end
