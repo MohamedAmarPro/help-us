@@ -3,6 +3,10 @@
 
 
 <% @events.each do |event|%>
-<%= event.name %>
+    <%= cl_image_tag event.organization.photo.key if event.organization.photo.attached? %>
+    <%= event.name %>
+    <%= event.start_date %>
+    <%= event.end_date %>
 <%end %>
 <%= link_to "share your event", new_event_path, class: "btn btn-dark mt-3 mb-3"%>
+<%= console %>
