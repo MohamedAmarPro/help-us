@@ -296,7 +296,7 @@ streetwise = Organization.create(
 streetwise.photo.attach(io: streetwise_photo, filename: 'streetwise.png', content_type: 'image/png')
 
 unicef_photo = URI.open('https://www.lemondedesados.fr/wp-content/uploads/2016/11/LOGO-UNICEF-PETIT.png')
-unicef = Organization.new(
+unicef = Organization.create(
   email: 'servicerelationdonateurs@unicef.fr',
   password: 'password',
   name: 'UNICEF',
