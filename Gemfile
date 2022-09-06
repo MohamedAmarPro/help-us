@@ -79,3 +79,6 @@ end
 
 # Use to host imgs
 gem "cloudinary"
+
+# geocoder
+gem "geocoder"
