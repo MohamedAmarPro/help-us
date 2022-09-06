@@ -24,11 +24,13 @@ export default class extends Controller {
     let st = window.pageYOffset
      if (st < this.lastScroll){
       console.log("UP")
-      this.element.style.display = "flex";
+      this.element.style.opacity = "0.95";
+      this.element.style.visibility = "visible";
      }
      else if (st > this.lastScroll) {
       console.log("DOWN")
-      this.element.style.display = "none";
+      this.element.style.opacity = "0";
+      this.element.style.visibility = "hidden";
      }
     this.lastScroll = st
   }
