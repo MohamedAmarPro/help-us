@@ -1,12 +1,14 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
-
+<div class="top-organization">
+    <h3><%= 'Here is all events that coming soon near of your address:' %></h3>
+    <%= render "shared/user_photo" %>
+</div>
 
 <% @events.each do |event|%>
-    <%= cl_image_tag event.organization.photo.key if event.organization.photo.attached? %>
-    <%= event.name %>
-    <%= event.start_date %>
-    <%= event.end_date %>
+    <div class="card-event">
+        <%= cl_image_tag event.organization.photo.key if event.organization.photo.attached? %>
+        <%= event.name %>
+        <%= event.start_date %>
+        <%= event.end_date %>
+    </div>
 <%end %>
 <%= link_to "share your event", new_event_path, class: "btn btn-dark mt-3 mb-3"%>
-<%= console %>
