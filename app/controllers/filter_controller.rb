@@ -14,19 +14,30 @@ class FilterController < ApplicationController
   end
 
   def categories
+    unless params[:filter_categories]
+      redirect_to filter_path, alert: 'Need to select 1 or more categories'
+    else
     cookies[:categories] = params[:filter_categories][:categories].join(",")
     redirect_to filter_path
+    end
   end
 
   def sub_categories
-    cookies[:sub_categories] = params[:filter_sub_categories][:sub_categories].join(",")
-    redirect_to filter_path
-
+    unless params[:filter_sub_categories]
+      redirect_to filter_path, alert: 'Need to select 1 or more subcategories'
+    else
+      cookies[:sub_categories] = params[:filter_sub_categories][:sub_categories].join(",")
+      redirect_to filter_path
+    end
   end
 
   def organizations
-    cookies[:organizations] = params[:filter_organizations][:organizations].join(",")
-    redirect_to filter_path
+    unless params[:filter_organizations]
+      redirect_to filter_path, alert: 'Need to select 1 or more organizations'
+    else
+      cookies[:organizations] = params[:filter_organizations][:organizations].join(",")
+      redirect_to filter_path
+    end
   end
 
   def reset
@@ -42,14 +53,3 @@ class FilterController < ApplicationController
 
 
 end
-
-
-# ["environment", "social"]
-
-# cookies[:categories] = [1, 4, 7]
-
- # if cookies[:categories]
-    #   @categories = Category.where(name: cookies[:categories])
-    # end
-"1&4&7"
-"1,4,7"

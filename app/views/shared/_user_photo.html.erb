@@ -1,0 +1,5 @@
+<% if current_user.photo.attached? %>
+    <%= cl_image_tag current_user.photo.key, class:"rounded-circle photo-user" %>
+<% else %>
+    <%= image_tag "icon-user.png", class:"rounded-circle photo-user" %>
+<% end %>

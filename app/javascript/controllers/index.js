@@ -12,3 +12,9 @@ application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import HideButtonController from "./hide_button_controller"
+application.register("hide-button", HideButtonController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)

@@ -1,11 +1,23 @@
 .photo-user {
     width: 45px;
     height: 45px;
+    border: solid $newblue;
+    border-width: 3px;
 }
 
 .top-organization {
     display: flex;
     justify-content: space-between;
+    font-family: $headers-font;
     align-items: center;
-    margin: 12px 8px 6px 8px;
+    margin: 24px 8px 6px 8px;
+}
+
+.pic {
+  margin: 24px 0 16px 336px
+}
+
+.welcome {
+  font-size: 32px;
+  font-weight: bold;
 }

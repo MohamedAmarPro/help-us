@@ -10,4 +10,8 @@ export default class extends Controller {
     console.log("hello")
     this.element.classList.toggle("card-category-click")
   }
+
+  highlightOrg() {
+    this.element.classList.toggle("card-organization-click")
+  }
 }

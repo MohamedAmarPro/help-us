@@ -3,7 +3,6 @@
     text-align: justify;
     border-radius: 8px;
     background-color: $white;
-    font-family: $headers-font;
     width: 95%;
     padding-bottom: 6px;
 }
@@ -14,7 +13,7 @@
 
 .card-organization p {
     margin: 6px 12px 0 12px;
-    font-family: $body-font;
+    font-family: $desc-font;
     font-size: 12px;
 }
 
@@ -24,8 +23,4 @@
     height: 150px;
     border-radius: 8px 8px 0 0;
     object-fit: cover;
-}
-
-.filter_organizations h1 {
-    font-size: 24px;
 }

@@ -1,5 +1,5 @@
 .mainpage {
-  background-color: $blue;
+  background-color: $main;
 }
 
 .card-category {
@@ -14,46 +14,60 @@
   font-weight: bold;
   text-shadow: 1px 1px 30px rgba(0,0,0,0.2);
   border-radius: 5px;
+  border-width: 2px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: solid $white;
+  border: solid $newblue;
 }
 
 .card-category-click {
-  border: solid #ffffff !important;
+  border: solid !important;
   border-width: 5px !important;
-  font-size: xx-large !important;
+  border-color: $newblue !important;
+  text-shadow: 2px 2px 60px rgba(125, 119, 119, 0.2) !important;
+}
+
+.card-organization-click {
+  border: solid !important;
+  border-width: 5px !important;
+  border-color: $newblue !important;
+  text-shadow: 2px 2px 60px rgba(125, 119, 119, 0.2) !important;
 }
 
 .cards_category {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
-  background-color: $blue;
+  background-color: $main;
   padding-right: 1.5em;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 }
 
+.submit-btn-scroll {
+  display: none;
+}
+
 .submit-btn {
   color: $white;
-  background-color: $black;
-  border-radius: 25px;
+  background-color: $newblue;
+  border-radius: 20px;
   font-family: $button-font;
   text-decoration: none;
+  font-size: x-large;
   padding: 6px 12px;
-  bottom: 5;
-  width: 200px;
+  width: 120px;
 }
 
 .submit-btn:hover {
   font-weight: bolder;
-  background-color: white;
+  background-color: $background;
 }
 
 .sticky {
 text-align: center;
 position: sticky;
-bottom: 150px;
+bottom: 100px;
+transition: 1s;
 }
 
 // Smallest device
