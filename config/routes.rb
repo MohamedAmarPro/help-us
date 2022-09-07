@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   resources :events
   resources :organizations, except: [:new, :create]
+
+  resources :donations, only: [:create, :show] do
+    resources :payments, only: :new
+  end
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

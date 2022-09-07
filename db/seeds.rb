@@ -367,53 +367,59 @@ event = Event.create(
   description: 'We organize this event to test this index events',
   start_date: '2022-09-23',
   end_date: '2022-09-24',
-  address: 'Lille',
+  address: "261 Bd de Tournai, Villeneuve-d'Ascq",
   organization: music_all,
+  participants: 2
 )
 
 event2 = Event.create(
   name: 'Event 2',
-  description: 'Praesent condimentum tortor ligula, at ullamcorper orci interdum nec. Morbi vel eros efficitur, sagittis velit et, dapibus purus. Nam dui dui, vulputate et nulla tristique, ultricies sodales velit. Vestibulum suscipit felis sed varius cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin rutrum ac libero quis mattis. Nam quam ante, varius eget ligula ac, accumsan placerat nulla. Integer placerat magna et sem rhoncus bibendum. Donec molestie risus ut cursus feugiat. Nunc condimentum dui velit, eget rutrum nisi interdum non. Ut eleifend lacus a mi scelerisque egestas sit amet euismod purus.',
+  description: 'Praesent condimentum tortor ligula, at ullamcorper orci interdum nec. Morbi vel eros efficitur, sagittis velit et, dapibus purus. Nam dui dui, vulputate et nulla tristique, ultricies sodales velit. Vestibulum suscipit felis sed varius cursus. Pellentesque habitant morbi tristique senectus et',
   start_date: '2022-09-13',
   end_date: '2022-09-12',
-  address: 'New-York',
-  organization: streetwise
+  address: 'Center-Park, New-York',
+  organization: streetwise,
+  participants: 2
 )
 
 event3 = Event.create(
   name: 'Event 3',
-  description: 'Praesent fringilla dignissim urna eu semper. Vestibulum sapien eros, vulputate mollis elementum id, dictum at ipsum. Ut vel auctor erat. Nam vel varius libero. Morbi justo quam, mattis a ligula faucibus, luctus posuere sapien. Nullam hendrerit posuere lobortis. In vel dui non turpis interdum elementum et nec eros. Etiam hendrerit pulvinar erat, id eleifend elit scelerisque at. Aliquam quis sapien nec quam tincidunt congue ac eu ante. Duis turpis eros, aliquet eget enim quis, tempus convallis metus. Maecenas elit sem, auctor sit amet enim quis, tincidunt mattis leo. Ut tincidunt libero ac mauris maximus efficitur.',
+  description: 'Praesent fringilla dignissim urna eu semper. Vestibulum sapien eros, vulputate mollis elementum id, dictum at ipsum. Ut vel auctor erat. Nam vel varius libero. Morbi justo quam, mattis a ligula faucibus, luctus posuere sapien. Nullam hendrerit posuere lobortis. In vel dui non turpis interdum e',
   start_date: '2022-10-01',
   end_date: '2022-10-01',
-  address: 'Lille',
-  organization: unicef
+  address: '12 rue Massena, Lille',
+  organization: unicef,
+  participants: 2
 )
 
 event4 = Event.create(
   name: 'Event 4',
-  description: 'Pellentesque ac scelerisque ante, quis vulputate ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. In suscipit tristique ante, vitae convallis massa vulputate in. Aliquam mauris diam, consectetur at accumsan eu, aliquam et lacus. Vestibulum eu nulla dui. Sed eu elit in nisi porta efficitur non ut orci.',
+  description: 'Pellentesque ac scelerisque ante, quis vulputate ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. In suscipit tristique ante, vitae convallis massa vulputate in. Aliquam mauris diam, consectetur at accumsan eu, aliquam et lacus. Vest',
   start_date: '2022-09-30',
   end_date: '2022-09-30',
-  address: 'Marrakech',
-  organization: aim
+  address: 'Avenue Mohamed V, Marrakech',
+  organization: aim,
+  participants: 2
 )
 
 event5 = Event.create(
   name: 'Event 5',
-  description: 'Quisque mattis ex enim, egestas fermentum nulla egestas et. Fusce eu diam pulvinar, rhoncus nibh nec, interdum urna. Donec nec nulla nec diam vulputate laoreet vel sed tortor. Donec non risus aliquam, ornare est at, sollicitudin felis. Vivamus consequat, leo et luctus hendrerit, erat leo sodales sapien, ut pharetra ante mi ut nisl. In rhoncus finibus eros, sed tincidunt ipsum scelerisque nec. Duis facilisis nisi eu mauris ultricies bibendum. Donec mi lectus, ornare non ligula nec, viverra egestas erat.',
+  description: 'Quisque mattis ex enim, egestas fermentum nulla egestas et. Fusce eu diam pulvinar, rhoncus nibh nec, interdum urna. Donec nec nulla nec diam vulputate laoreet vel sed tortor. Donec non risus aliquam, ornare est at, sollicitudin felis. Vivamus consequat, leo et luctus hendrerit, erat leo sod',
   start_date: '2022-11-11',
   end_date: '2022-11-20',
-  address: 'Montreal',
-  organization: sea_shepherd
+  address: '6024 1ère Avenue, Montréal',
+  organization: sea_shepherd,
+  participants: 2
 )
 
 event6 = Event.create(
   name: 'Event 6',
-  description: 'raesent pulvinar metus justo, sed gravida eros porttitor a. Vivamus nec finibus diam. Sed faucibus tortor eget sem lobortis, in cursus turpis tempor. Phasellus quis libero lobortis, euismod lectus a, lobortis magna. Aenean at nulla faucibus tortor venenatis porttitor blandit ac dolor. Nulla ultricies enim nec convallis dignissim. Vivamus sit amet nisl eu eros maximus aliquam eu non ipsum. Nunc molestie consectetur sem, at cursus orci rhoncus sit amet. Nunc non orci ac risus porttitor maximus sed ac est. Pellentesque faucibus ante in nibh vehicula, quis fringilla ligula dapibus. Duis vitae venenatis ligula, sit amet congue arcu. Maecenas fermentum erat nec suscipit ma',
+  description: 'raesent pulvinar metus justo, sed gravida eros porttitor a. Vivamus nec finibus diam. Sed faucibus tortor eget sem lobortis, in cursus turpis tempor. Phasellus quis libero lobortis, euismod lectus a, lobortis magna. Aenean at nulla faucibus tortor venenatis porttitor blandit ac dolor. Nulla ultri',
   start_date: '2023-01-12',
   end_date: '2023-01-12',
-  address: 'Tokyo',
-  organization: make_a_wish
+  address: 'Avenue Mohamed V, Marrakech',
+  organization: make_a_wish,
+  participants: 2
 )
 
 puts '-------------------- EVENTS CREATED ---------------------------------------------------'
