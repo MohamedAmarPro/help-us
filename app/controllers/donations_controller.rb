@@ -25,7 +25,7 @@ class DonationsController < ApplicationController
       success_url: donation_url(donation),
       cancel_url: donation_url(donation)
     )
-    binding.pry
+    
     donation.update(checkout_session_id: session.id, amount_cents: session.amount_total)
 
     params[:organizations].each do |orga|
