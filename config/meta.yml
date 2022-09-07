@@ -1,0 +1,5 @@
+meta_product_name: "Help Us"
+meta_title: "Help us to change world !"
+meta_description: "Help us give you access to multiple organizations to make donations & participate to events"
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
+twitter_account: "@HelpUs"   # required for Twitter Cards
