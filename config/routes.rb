@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   resources :events
 
-  resources :donations, only: [:create, :show]
+  resources :donations, only: [:create, :show] do
+    resources :payments, only: :new
+  end
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

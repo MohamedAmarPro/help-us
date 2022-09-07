@@ -88,3 +88,4 @@ gem 'money-rails'
 
 # gem stripe
 gem 'stripe'
+gem 'stripe_event'

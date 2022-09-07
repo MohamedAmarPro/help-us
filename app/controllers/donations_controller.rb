@@ -6,37 +6,44 @@ class DonationsController < ApplicationController
     line_items = params[:organizations].map do |orga|
       if orga[:status] == "true"
         organization = Organization.find(orga[:id].to_i)
-       { name: organization.name, amount: orga[:price].to_i, currency: 'eur', quantity: 1 }
+        product = Stripe::Product.create({name: organization.name})
+        price = Stripe::Price.create({
+          unit_amount_decimal: orga[:price].to_i * 100,
+          currency: 'eur',
+          product: product
+        })
+       { price: price, quantity: 1 }
+
       end
     end.compact
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: line_items,
+      mode: "payment",
       success_url: donation_url(donation),
       cancel_url: donation_url(donation)
     )
 
     donation.update(checkout_session_id: session.id)
 
-    raise
+    params[:organizations].each do |orga|
 
+      if orga[:status] == "true"
+        organization = Organization.find(orga[:id].to_i)
+        orga_dona = OrgaDona.create(price: orga[:price].to_i, organization: organization, donation: donation)
+      end
 
-    # params_orga = params[:organizations].map {|orga| {id: orga[:id], price: orga[:price], status: orga[:status]}}
-    # params_orga.each do |param|
+    end
 
-    #   if param[:status] == "true"
-    #     organization = Organization.find(param[:id])
-    #     orga_dona = OrgaDona.create(price: param[:price], organization: organization, donation: donation)
-    #   end
-
-    # end
+    redirect_to new_donation_payment_path(donation)
 
 
 
-#     donation = Donation.new
-#     orga_dona = Donation.create!(: teddy,  amount: teddy.price, state: 'pending', user: current_user)
-
-#   redirect_to new_order_payment_path(order)
  end
+
+ def show
+  @donation = current_user.donations.find(params[:id])
+end
+
 end

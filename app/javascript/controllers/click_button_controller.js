@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="click-button"
 export default class extends Controller {
-  static targets = ["status"]
+  static targets = ["status", "input_price"]
   connect() {
 
   }
