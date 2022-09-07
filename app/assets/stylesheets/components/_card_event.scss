@@ -1,0 +1,71 @@
+.card-event {
+    width: 95%;
+    margin: 16px auto;
+    position: relative;
+    border-radius: 12px;
+    background-color: $white;
+}
+
+.card-event img {
+    height: 150px;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+} 
+
+.event-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-name-date {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.event-date {
+    display: flex;
+    font-size: 18px;
+    margin: 0 auto;
+    line-height: normal;
+}
+
+.event-name-description {
+    text-align: justify;
+    margin-top: 8px
+}
+
+.event-description {
+    font-size: 14px;
+    margin: 8px auto;
+    padding: 8px;
+}
+
+.event-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.event-footer button {
+    align-self: center;
+}
+
+.event-address {
+    display: flex;
+    margin-right: 16px;
+}
+
+.event-address iconify-icon, .event-participants iconify-icon, .event-date iconify-icon {
+    font-size: 24px;
+    align-self: center;
+    margin-right: 3px;
+}
+
+.event-participants {
+    display: flex;
+    margin-left: 105px;
+    align-items: center;
+}
