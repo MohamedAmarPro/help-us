@@ -1,5 +1,6 @@
 class DonationsController < ApplicationController
-   def create
+
+  def create
 
     donation = Donation.create!(state: "pending", user: current_user)
 
@@ -24,8 +25,8 @@ class DonationsController < ApplicationController
       success_url: donation_url(donation),
       cancel_url: donation_url(donation)
     )
-
-    donation.update(checkout_session_id: session.id)
+    binding.pry
+    donation.update(checkout_session_id: session.id, amount_cents: session.amount_total)
 
     params[:organizations].each do |orga|
 
