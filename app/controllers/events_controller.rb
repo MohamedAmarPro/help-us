@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %I[show destroy edit update]
   def index
-    @events = Event.all
+    @events = Event.near(current_user.address, 50, units: :km)
   end
 
   def show
@@ -13,16 +13,10 @@ class EventsController < ApplicationController
   end
 
   def create
-
     @event = Event.new(params_events)
     @orga = Organization.first
     @event.organization = @orga
-
-
-
     if @event.save
-
-
       redirect_to events_path
     else
       render :new, status: :unprocessable_entity
@@ -34,7 +28,6 @@ class EventsController < ApplicationController
 
   def edit
   end
-
 
   private
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :organizations
-  devise_for :users
+  devise_for :organizations, controllers: { sessions: "organizations/sessions" }
+  devise_for :users, controllers: { sessions: "users/sessions" }
   root to: "pages#home"
 
   get "filter", to: "filter#show"
@@ -11,9 +11,13 @@ Rails.application.routes.draw do
 
   resources :events
 
+
   resources :donations, only: [:create, :show] do
     resources :payments, only: :new
   end
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
+
+  resources :organizations
+
 end
