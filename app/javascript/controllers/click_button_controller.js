@@ -2,8 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="click-button"
 export default class extends Controller {
+  static targets = ["status", "input_price"]
   connect() {
-    console.log("Yo");
+
   }
 
   highlight() {
@@ -13,5 +14,11 @@ export default class extends Controller {
 
   highlightOrg() {
     this.element.classList.toggle("card-organization-click")
+    if(this.statusTarget.value === 'false') {
+      this.statusTarget.value = "true"
+    }else {
+      this.statusTarget.value = "false"
+    }
   }
+
 }
