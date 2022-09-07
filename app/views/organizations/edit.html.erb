@@ -1,0 +1,15 @@
+<div class="container login">
+  <%= simple_form_for(@organization) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description,
+                        required: true,
+                        input_html: { maxlength: 300 } %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :sub_category_id, collection: SubCategory.all %>
+
+    <div class="form-actions d-flex justify-content-center gap-3 mt-5">
+      <%= f.button :submit, "Update", class:"submit-btn" %>
+      <% end %>
+      <%= link_to "Cancel", organizations_path, class: "submit-btn text-center" %>
+    </div>
+</div>

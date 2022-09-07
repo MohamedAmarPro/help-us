@@ -201,15 +201,15 @@ planet_water = Organization.create(
 )
 planet_water.photo.attach(io: planet_water_photo, filename: 'planet_water.png', content_type: 'image/png')
 
-water_aid_photo = URI.open('https://www.pseau.org/gif/logo_wateraid_2019.png')
-water_aid = Organization.create(
-  email: 'contact@water_aid.org',
-  password: 'password',
-  name: 'Water Aid',
-  sub_category: SubCategory.find_by(name: 'Drinking water'),
-  description: "WaterAid transforms lives by improving access to clean water, hygiene and sanitation in the world's poorest communities. We work with local partners and influence decision-makers to maximise our impact."
-)
-water_aid.photo.attach(io: water_aid_photo, filename: 'water_aid.png', content_type: 'image/png')
+# water_aid_photo = URI.open('https://www.pseau.org/gif/logo_wateraid_2019.png')
+# water_aid = Organization.create(
+#   email: 'contact@water_aid.org',
+#   password: 'password',
+#   name: 'Water Aid',
+#   sub_category: SubCategory.find_by(name: 'Drinking water'),
+#   description: "WaterAid transforms lives by improving access to clean water, hygiene and sanitation in the world's poorest communities. We work with local partners and influence decision-makers to maximise our impact."
+# )
+# water_aid.photo.attach(io: water_aid_photo, filename: 'water_aid.png', content_type: 'image/png')
 
 wfp_photo = URI.open('https://cdn.wfp.org/guides/ui/v1.0.0/assets/logos/standard/en/wfp-logo-standard-blue-en.png')
 wfp = Organization.create(

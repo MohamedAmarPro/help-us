@@ -10,14 +10,11 @@ Rails.application.routes.draw do
   post "filter/reset", to: "filter#reset"
 
   resources :events
-
+  resources :organizations, except: [:new, :create]
 
   resources :donations, only: [:create, :show] do
     resources :payments, only: :new
   end
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
-
-  resources :organizations
-
 end
