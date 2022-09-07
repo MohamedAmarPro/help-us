@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validate :validate_age
-  
+
   private
 
   def validate_age
