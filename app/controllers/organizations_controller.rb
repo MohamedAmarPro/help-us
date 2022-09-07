@@ -22,6 +22,15 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def edit
+    set_organization
+  end
+
+  def update
+    @organization.update(params_organizations)
+    redirect_to current_organization
+  end
+
   private
 
   def set_organization

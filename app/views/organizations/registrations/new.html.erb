@@ -15,10 +15,12 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :description, required: true, input_html: { maxlength: 300 } %>
+    <%= f.input :sub_category, collection: %I[Oceans Forest Cats Bees Homelessness Children Jobs Unions Painting Drinking water Famine Music Illiteracy Teachers] ,required: true %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Register your organization" %>
   </div>
 <% end %>
 

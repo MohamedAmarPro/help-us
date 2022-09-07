@@ -1,9 +1,14 @@
+<%= render "shared/navbar_orga" %>
 <div class="container">
-  <h1 class="welcome mt-5">Hello!</h1>
+  <div class="d-flex justify-content-between">
+    <h1 class="welcome mt-4">Hello <em><%= @organization.name %></em> !</h1>
+    <div class="mt-3"><%= render "shared/organization_photo" %></div>
+  </div>
+
   <h2 class="mt-5"> Your Organization :</h2>
-  <div class="card-organization mt-5" data-controller="click-button" data-action="click->click-button#highlightOrg">
+  <div class="card-organization mt-4">
     <%= cl_image_tag @organization.photo.key, crop: :fill if @organization.photo.attached? %>
-    <div class="space mt-4">
+    <div class="space mt-5">
       <h2><%= @organization.name %></h2>
       <p><%= @organization.description %></p>
     </div>
