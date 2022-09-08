@@ -7,14 +7,14 @@
   <p><%= organization.description %></p>
 
 
-   <input type="number" id="input-price" name="organizations[][price]"  hidden data-click-button-target="input_price" step="10" min="5" max="100">
+   <input type="number" id="input-price" name="organizations[][price]"  hidden data-click-button-target="input_price" >
    <input name="organizations[][id]" value=<%=organization.id%> hidden>
    <input name="organizations[][status]" value=false data-click-button-target="status" hidden>
   </div>
 
 <% else %>
 
-<div class="card-organization mt-4" >
+<div class="card-organization mt-4 mb-3" >
   <%= cl_image_tag organization.photo.key, crop: :fill if organization.photo.attached? %>
   <h2><%=organization.name %></h2>
   <p><%= organization.description %></p>
