@@ -18,7 +18,7 @@
 
 <div class="sticky d-flex justify-content-between gap-3" data-controller="hide-button" data-action="scroll@window->hide-button#scrollDown">
 
- <%= link_to "Share your donations", "https://twitter.com/intent/tweet?url=#{request.url}", class: "submit-btn-payment mt-4" %>
+ <%= link_to "Share your donations", "https://twitter.com/intent/tweet?url=#{request.url}&text=I just donated to #{@donation.orga_donas.map{|orga| orga.organization.name}.join(", ")}", class: "submit-btn-payment mt-4" %>
 </div>
 </div>
 
