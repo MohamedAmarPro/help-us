@@ -61,6 +61,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.hosts << '.eu.ngrok.io'
+  config.hosts << /[a-z0-9\-]+\.ngrok\.io/
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true

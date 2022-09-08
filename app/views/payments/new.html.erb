@@ -1,20 +1,43 @@
 <div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @donation.orga_donas.first.organization.name %></strong> for <strong><%= humanized_money_with_symbol @donation.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
 
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @donation.checkout_session_id %>'
-          });
-        });
-      </script>
-    </div>
+  <div class="top-organization">
+    <h1 class="welcome"><%= "You are almost there.. " %><%= current_user.first_name %></h1>
+    <%= render "shared/user_photo" %>
   </div>
+
+
+  <div>
+    <% @donation.orga_donas.each do |orga| %>
+      <%= render "shared/organization", organization: orga.organization, clickable: false %>
+      <% end %>
+  </div>
+
+
+  <div class= "mt-4 ">
+    <div class=" text_pay mb-5 text-center">
+      <strong> Your donation of <%= humanized_money_with_symbol @donation.amount %> will only cost you <%=@donation.amount * 0.25 %> € after tax </strong></p>
+    </div>
+
+
+  </div>
+
+<div class="sticky d-flex justify-content-between gap-3" data-controller="hide-button" data-action="scroll@window->hide-button#scrollDown">
+  <%= link_to "Back", filter_path, class: "submit-btn"%>
+      <button style="border:none" id="pay">Pay</button>
 </div>
+</div>
+
+
+
+ <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      const paymentButton = document.getElementById('pay');
+      paymentButton.addEventListener('click', () => {
+        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+        stripe.redirectToCheckout({
+          sessionId: '<%= @donation.checkout_session_id %>'
+        });
+      });
+    </script>
+
+<%= render "shared/navbar" %>

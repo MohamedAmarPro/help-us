@@ -4,7 +4,9 @@
     border-radius: 8px;
     background-color: $white;
     width: 95%;
+    margin: 0 auto;
     padding-bottom: 6px;
+    box-shadow: 5px 5px 10px #afb1b197;
 }
 
 .card-organization h2 {
@@ -23,4 +25,8 @@
     height: 150px;
     border-radius: 8px 8px 0 0;
     object-fit: contain;
+}
+
+.testorg {
+  margin-top: 16vh;
 }
