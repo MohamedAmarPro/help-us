@@ -1,13 +1,20 @@
 <div>
     <ul class='img-dropdown'>
         <li class="dropdown">
-            <% if current_user.photo.attached? %>
+            <% if current_user && current_user.photo.attached? %>
                 <%= cl_image_tag current_user.photo.key,
                 class:"rounded-circle photo-user dropdwon-toggle",
                 id:"imgDropdown",
                 data: { bs_toggle: "dropdown", controller: "click-button", action: "click->click-button#highlightUser" },
                 'aria-haspopup': true,
                 'aria-expanded': false %>
+            <% elsif current_organization.photo.attached? %>
+                <%= cl_image_tag current_organization.photo.key,
+                    class:"rounded-circle photo-user dropdwon-toggle",
+                    id:"imgDropdown",
+                    data: { bs_toggle: "dropdown", controller: "click-button", action: "click->click-button#highlightUser" },
+                    'aria-haspopup': true,
+                    'aria-expanded': false %>
             <% else %>
                 <%= image_tag "icon-user.png", class:"rounded-circle photo-user dropdown-toggle", id:'imgDropdown', data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
