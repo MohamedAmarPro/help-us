@@ -3,7 +3,7 @@
 
 <div class="card-organization"  data-controller="click-button" data-action="click->click-button#highlightOrg"  >
   <%= cl_image_tag organization.photo.key, crop: :fill if organization.photo.attached? %>
-  <h2><%=organization.name %></h2>
+  <h3><%=organization.name %></h3>
   <p><%= organization.description %></p>
 
 
@@ -16,7 +16,7 @@
 
 <div class="card-organization mt-4 mb-3" >
   <%= cl_image_tag organization.photo.key, crop: :fill if organization.photo.attached? %>
-  <h2><%=organization.name %></h2>
+  <h3><%=organization.name %></h3>
   <p><%= organization.description %></p>
 
   </div>
