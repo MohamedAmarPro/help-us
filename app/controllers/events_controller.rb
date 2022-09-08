@@ -1,7 +1,13 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %I[show destroy edit update]
+  skip_before_action :authenticate_user!, only: :create
+
   def index
-    @events = Event.near(current_user.address, 50, units: :km)
+    if current_user
+      @events = Event.near(current_user.address, 50, units: :km)
+    else
+      @events = current_organization.events
+    end
   end
 
   def show

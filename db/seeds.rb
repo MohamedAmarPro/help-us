@@ -369,7 +369,6 @@ event = Event.create(
   end_date: '2022-09-24',
   address: "261 Bd de Tournai, Villeneuve-d'Ascq",
   organization: music_all,
-  participants: 2
 )
 
 event2 = Event.create(
@@ -379,7 +378,6 @@ event2 = Event.create(
   end_date: '2022-09-12',
   address: 'Center-Park, New-York',
   organization: streetwise,
-  participants: 2
 )
 
 event3 = Event.create(
@@ -389,7 +387,6 @@ event3 = Event.create(
   end_date: '2022-10-01',
   address: '12 rue Massena, Lille',
   organization: unicef,
-  participants: 2
 )
 
 event4 = Event.create(
@@ -399,7 +396,6 @@ event4 = Event.create(
   end_date: '2022-09-30',
   address: 'Avenue Mohamed V, Marrakech',
   organization: aim,
-  participants: 2
 )
 
 event5 = Event.create(
@@ -409,7 +405,6 @@ event5 = Event.create(
   end_date: '2022-11-20',
   address: '6024 1ère Avenue, Montréal',
   organization: sea_shepherd,
-  participants: 2
 )
 
 event6 = Event.create(
@@ -419,7 +414,6 @@ event6 = Event.create(
   end_date: '2023-01-12',
   address: 'Avenue Mohamed V, Marrakech',
   organization: make_a_wish,
-  participants: 2
 )
 
 puts '-------------------- EVENTS CREATED ---------------------------------------------------'

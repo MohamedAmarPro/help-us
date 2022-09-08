@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_07_134304) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_124946) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +59,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_134304) do
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
+  create_table "event_participants", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_participants_on_event_id"
+    t.index ["user_id"], name: "index_event_participants_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -71,7 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_134304) do
     t.bigint "organization_id", null: false
     t.float "latitude"
     t.float "longitude"
-    t.integer "participants"
     t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 
@@ -111,15 +118,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_134304) do
     t.index ["category_id"], name: "index_sub_categories_on_category_id"
   end
 
-  create_table "user_events", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "event_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_user_events_on_event_id"
-    t.index ["user_id"], name: "index_user_events_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -141,11 +139,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_134304) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "donations", "users"
+  add_foreign_key "event_participants", "events"
+  add_foreign_key "event_participants", "users"
   add_foreign_key "events", "organizations"
   add_foreign_key "orga_donas", "donations"
   add_foreign_key "orga_donas", "organizations"
   add_foreign_key "organizations", "sub_categories"
   add_foreign_key "sub_categories", "categories"
-  add_foreign_key "user_events", "events"
-  add_foreign_key "user_events", "users"
 end
