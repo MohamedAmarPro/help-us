@@ -33,4 +33,8 @@ export default class extends Controller {
 
   }
 
+  highlightUser() {
+    this.element.classList.toggle("photo-user-click")
+  }
+
 }
