@@ -4,7 +4,7 @@
     <%= render "shared/user_photo" %>
   </div>
   <% @categories.each do |category| %>
-    <h1 style='font-size: 22px'><%= category.name %><%= ":" %></h1>
+    <h2 style='font-size: 22px'><%= category.name %><%= ":" %></h2>
     <div class="scrollmenu">
       <%= f.input :sub_categories,
                   legend_tag: false,

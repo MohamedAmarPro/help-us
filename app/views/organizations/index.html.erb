@@ -9,7 +9,7 @@
     <div class="card-organization">
       <%= cl_image_tag @organization.photo.key, crop: :fill if @organization.photo.attached? %>
       <div class="space mt-5">
-        <h2 class="text-left"><%= @organization.name %></h2>
+        <h3 class="text-left"><%= @organization.name %></h3>
         <p><%= @organization.description %></p>
       </div>
     </div>
