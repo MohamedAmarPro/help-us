@@ -1,27 +1,25 @@
 <div class="container">
 
+
 <div class="top-organization">
     <h1 class="welcome"><%= "Congratulations" %> <%= current_user.first_name %> <%="your donation has been confirmed"%> </h1>
+
     <%= render "shared/user_photo_payment" %>
   </div>
 
-
-<div>
-
+  <div>
     <% @donation.orga_donas.each do |orga| %>
-      <%= render "shared/organization", organization: orga.organization, clickable: false %>
-      <%= link_to "Share your donations", "https://twitter.com/intent/tweet?url=#{request.url}&text=Beginner's%20Guide%20to%20Jest%20Testing%20in%20React&via=helpus", class: "submit-btn mt-4" %>
+      <%= render "shared/organization_show_payment", organization: orga.organization, clickable: false %>
       <% end %>
+  </div>
+
+
+
+<div class="sticky d-flex justify-content-between gap-3" data-controller="hide-button" data-action="scroll@window->hide-button#scrollDown">
+
+ <%= link_to "Share your donations", "https://twitter.com/intent/tweet?url=#{request.url}", class: "submit-btn-payment mt-4" %>
+</div>
 </div>
 
 
-<%= @donation.state %>
-      <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @donation.created_at.to_date %></li>
-
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @donation.amount %></li>
-        </li>
-      </ul>
-
-
-</div>
+ <%= render "shared/navbar" %>

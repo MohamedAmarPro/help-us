@@ -1,0 +1,5 @@
+<div class="card-organization-new-payment mt-4 mb-3" >
+  <%= cl_image_tag organization.photo.key, crop: :fill if organization.photo.attached? %>
+  <p> <%= organization.name%> thanks <%= current_user.first_name %> for his donation  🙏🏻 </p>
+
+</div>
