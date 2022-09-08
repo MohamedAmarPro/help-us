@@ -9,13 +9,14 @@
     <div class="card-organization">
       <%= cl_image_tag @organization.photo.key, crop: :fill if @organization.photo.attached? %>
       <div class="space mt-5">
-        <h2 class="text-left"><%= @organization.name %></h2>
+        <h3 class="text-left"><%= @organization.name %></h3>
         <p><%= @organization.description %></p>
       </div>
     </div>
 
-    <div class="mt-5">
-      <%= link_to "Manage your organization", edit_organization_path(@organization), class: "submit-btn" %>
+    <div class="mt-3 d-flex">
+      <%= link_to "Create your event", new_event_path, class:'submit-btn orga-btn' %>
+      <%= link_to "Update your organization", edit_organization_path(@organization), class: "submit-btn orga-btn" %>
     </div>
   </div>
 </div>

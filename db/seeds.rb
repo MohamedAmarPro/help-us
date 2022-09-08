@@ -49,9 +49,6 @@ animals.photo.attach(io: animals_photo, filename: 'animals.png', content_type: '
 humanitarian_photo = URI.open('https://images.unsplash.com/photo-1517351313798-6f674000e4aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1108&q=80')
 humanitarian = Category.create(name: "Humanitarian")
 humanitarian.photo.attach(io: humanitarian_photo, filename: 'humaniatarian.png', content_type: 'image/png')
-employment_photo = URI.open('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80')
-employment = Category.create(name: "Employment")
-employment.photo.attach(io: employment_photo, filename: 'employment.png', content_type: 'image/png')
 education_photo = URI.open('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1773&q=80')
 education = Category.create(name: "Education")
 education.photo.attach(io: education_photo, filename: 'education.png', content_type: 'image/png')
@@ -80,12 +77,6 @@ homelessness.photo.attach(io: homelessness_photo, filename: 'homelessness.png', 
 children_photo = URI.open('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpbGRyZW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60')
 children = SubCategory.create(name: "Children", category: solidarity)
 children.photo.attach(io: children_photo, filename: 'children.png', content_type: 'image/png')
-jobs_photo = URI.open('https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8am9ic3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60')
-jobs = SubCategory.create(name: "Jobs", category: employment)
-jobs.photo.attach(io: jobs_photo, filename: 'jobs.png', content_type: 'image/png')
-unions_photo = URI.open('https://veille-travail.anact.fr/sites/default/files/vignettes/produits-documentaires/engages_syndicaux.jpg')
-unions = SubCategory.create(name: "Unions", category: employment)
-unions.photo.attach(io: unions_photo, filename: 'unions.png', content_type: 'image/png')
 painting_photo = URI.open('https://images.unsplash.com/photo-1541753866388-0b3c701627d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhaW50aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60')
 painting = SubCategory.create(name: "Painting", category: culture)
 painting.photo.attach(io: painting_photo, filename: 'painting.png', content_type: 'image/png')
@@ -369,7 +360,6 @@ event = Event.create(
   end_date: '2022-09-24',
   address: "261 Bd de Tournai, Villeneuve-d'Ascq",
   organization: music_all,
-  participants: 2
 )
 
 event2 = Event.create(
@@ -379,7 +369,6 @@ event2 = Event.create(
   end_date: '2022-09-12',
   address: 'Center-Park, New-York',
   organization: streetwise,
-  participants: 2
 )
 
 event3 = Event.create(
@@ -389,7 +378,6 @@ event3 = Event.create(
   end_date: '2022-10-01',
   address: '12 rue Massena, Lille',
   organization: unicef,
-  participants: 2
 )
 
 event4 = Event.create(
@@ -399,7 +387,6 @@ event4 = Event.create(
   end_date: '2022-09-30',
   address: 'Avenue Mohamed V, Marrakech',
   organization: aim,
-  participants: 2
 )
 
 event5 = Event.create(
@@ -409,7 +396,6 @@ event5 = Event.create(
   end_date: '2022-11-20',
   address: '6024 1ère Avenue, Montréal',
   organization: sea_shepherd,
-  participants: 2
 )
 
 event6 = Event.create(
@@ -419,7 +405,6 @@ event6 = Event.create(
   end_date: '2023-01-12',
   address: 'Avenue Mohamed V, Marrakech',
   organization: make_a_wish,
-  participants: 2
 )
 
 puts '-------------------- EVENTS CREATED ---------------------------------------------------'
