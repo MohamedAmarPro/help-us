@@ -1,5 +1,5 @@
 <div class="container">
-<% content_for :meta_image, cl_image_path(@donation.orga_donas.first.organization.photo.key) %>
+<% content_for :meta_image, cl_image_path(@donation.orga_donas.first.organization.photo.key, width: 800,height: 418, crop: "fill" ) %>
 
 
 <div class="top-organization">
