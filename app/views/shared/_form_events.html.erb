@@ -1,22 +1,27 @@
-<%= link_to "Get back to index", events_path, class: "btn btn-dark mt-3 mb-3"%>
-<%= simple_form_for event, html: {data: {controller: "flatpickr"}} do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description%>
-  <%= f.input :address %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+<div class="container login mt-4">
+  <h1>Create your event</h1>
 
-   <%= f.input :start_date,label: false, as: :string,input_html: {
-                                  class:"d-none",
-                              data: {
-                                flatpickr_target: "startDate",
-                              } }
-                              %>
-  <%= f.input :end_date, as: :string,label: false,
-                              input_html: {
-                                class: "d-none",
+  <%= simple_form_for event, html: {data: {controller: "flatpickr"}} do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description%>
+    <%= f.input :address %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
+    <%= f.input :start_date,label: false, as: :string,input_html: {
+                                    class:"d-none",
                                 data: {
-                                  flatpickr_target: 'endDate',
-                                } } %>
-
-  <%= f.submit class: "btn btn-dark" %>
-<% end %>
+                                  flatpickr_target: "startDate",
+                                } }
+                                %>
+    <%= f.input :end_date, as: :string,label: false,
+                                input_html: {
+                                  class: "d-none",
+                                  data: {
+                                    flatpickr_target: 'endDate',
+                                  } } %>
+    <div class="d-flex justify-content-center gap-3">
+      <%= link_to "Get back to index", events_path, class: "btn btn-danger "%>
+      <%= f.submit class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>

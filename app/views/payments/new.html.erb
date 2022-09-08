@@ -8,20 +8,20 @@
 
   <div>
     <% @donation.orga_donas.each do |orga| %>
-      <%= render "shared/organization", organization: orga.organization, clickable: false %>
+      <%= render "shared/organization_new_payment", organization: orga.organization, clickable: false %>
       <% end %>
   </div>
 
 
   <div class= "mt-4 ">
     <div class=" text_pay mb-5 text-center">
-      <strong> Your donation of <%= humanized_money_with_symbol @donation.amount %> will only cost you <%=@donation.amount * 0.25 %> € after tax </strong></p>
+      <strong> This will only cost you <%= humanized_money_with_symbol @donation.amount * 0.25 %> after tax 😇 </strong></p>
     </div>
 
 
   </div>
 
-<div class="sticky d-flex justify-content-between gap-3" data-controller="hide-button" data-action="scroll@window->hide-button#scrollDown">
+<div class="sticky d-flex justify-content-around" data-controller="hide-button" data-action="scroll@window->hide-button#scrollDown">
   <%= link_to "Back", filter_path, class: "submit-btn"%>
       <button style="border:none" id="pay">Pay</button>
 </div>

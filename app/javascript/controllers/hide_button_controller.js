@@ -5,6 +5,7 @@ import { bottom } from "@popperjs/core";
 export default class extends Controller {
   connect() {
     this.lastScroll = window.pageYOffset;
+    this.counter = 0
   }
 
   scrollDown() {
@@ -24,11 +25,15 @@ export default class extends Controller {
     let st = window.pageYOffset
      if (st < this.lastScroll){
       console.log("UP")
-      this.element.style.opacity = "0.95";
-      this.element.style.visibility = "visible";
+      this.counter += 1;
+      if (this.counter > 30){
+        this.element.style.opacity = "0.95";
+        this.element.style.visibility = "visible";
+      }
      }
      else if (st > this.lastScroll) {
       console.log("DOWN")
+      this.counter = 0
       this.element.style.opacity = "0";
       this.element.style.visibility = "hidden";
      }
