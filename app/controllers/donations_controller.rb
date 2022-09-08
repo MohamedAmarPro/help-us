@@ -22,8 +22,8 @@ class DonationsController < ApplicationController
       payment_method_types: ['card'],
       line_items: line_items,
       mode: "payment",
-      success_url: donation_path(donation),
-      cancel_url: donation_path(donation)
+      success_url: donation_url(donation),
+      cancel_url: donation_url(donation)
     )
     
     donation.update(checkout_session_id: session.id, amount_cents: session.amount_total)
