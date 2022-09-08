@@ -1,8 +1,14 @@
 .photo-user {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     border: solid $newblue;
     border-width: 3px;
+}
+
+.photo-user-click {
+  width: 55px;
+  height: 55px;
+  border-width: 4px;
 }
 
 .top-organization {
@@ -20,4 +26,16 @@
 .welcome {
   font-size: 32px;
   font-weight: bold;
+}
+
+.smooth {
+  border-radius: 10px;
+  background-color: $newblop;
+  border: black;
+  // transition: 0.5s;
+}
+
+.smooth a {
+  color: white;
+  font-weight: bolder;
 }
