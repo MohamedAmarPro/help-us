@@ -1,6 +1,6 @@
 <div class="top-organization">
     <h3><%= 'Here is all events that coming soon near of your address:' %></h3>
-    <%= render "shared/user_photo" %>
+    <%= render "shared/user_photo" , current_user: @logger%>
 </div>
 
 <%# CARDS EVENTS %>
@@ -20,10 +20,12 @@
             </div>
             <div class="event-footer">
                 <div class="event-address"><iconify-icon icon="akar-icons:location"></iconify-icon><%= event.address %></div>
-                <% if event.event_participants.where(user: current_user).empty? %> 
-                    <%= link_to "Going", event_event_participants_path(event), data: {turbo_method: "post"}, class: 'submit-btn event-footer-button'%>
-                <% else %>
-                     <%= link_to "Not Going", event_participant_path(event.event_participants.find_by(user: current_user)), data: {turbo_method: "delete"}, class: 'submit-btn event-footer-button button-cancel' %>
+                <% if current_user %>
+                    <% if event.event_participants.where(user: current_user).empty? %> 
+                        <%= link_to "Going", event_event_participants_path(event), data: {turbo_method: "post"}, class: 'submit-btn event-footer-button'%>
+                    <% else %>
+                        <%= link_to "Not Going", event_participant_path(event.event_participants.find_by(user: current_user)), data: {turbo_method: "delete"}, class: 'submit-btn event-footer-button button-cancel' %>
+                    <% end %>
                 <% end %>
                 <div class="event-participants"><iconify-icon icon="akar-icons:people-group"></iconify-icon><%= event.event_participants.count %></div>
             </div>
