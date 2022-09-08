@@ -42,6 +42,9 @@
   margin: 0 auto;
   padding-bottom: 6px;
   box-shadow: 5px 5px 10px #afb1b197;
+  strong {
+    font-size: large;
+  }
 }
 
 .card-organization-new-payment img {
@@ -54,7 +57,8 @@
 
 .card-organization-new-payment p {
   margin: 6px 12px 0 12px;
-  font-family: $home-font;
-  font-size: 13px;
-  padding: 12px
+  font-size: 16px;
+  padding: 16px;
+  text-align: center;
+
 }
