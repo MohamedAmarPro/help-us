@@ -14,7 +14,7 @@
                 as: :check_boxes,
                 include_hidden: false,
                 input_html: { class: "d-none" },
-                label_method: lambda { |organization| render 'shared/organization', organization: organization }
+                label_method: lambda { |organization| render 'shared/organization', organization: organization, clickable: true}
       %>
 
   <% end %>

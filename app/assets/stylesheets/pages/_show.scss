@@ -9,7 +9,12 @@
   width: 55px;
   height: 55px;
   border-width: 4px;
-}
+
+.photo-userp {
+  width: 80px;
+  height: 80px;
+  border: solid $newblue;
+  border-width: 3px;
 
 .top-organization {
     display: flex;
