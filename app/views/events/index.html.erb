@@ -1,4 +1,4 @@
- <%= render "shared/navbar_events" %>
+
 <div class="top-organization">
     <h3><%= 'Events near you:' %></h3>
     <%= render "shared/user_photo" , current_user: @logger%>
@@ -13,7 +13,7 @@
             <div id="event_<%= event.id %>" class="event-name-description">
                 <div class="event-name-date">
                     <p style='margin: 0'><%= event.name %> - <%= event.organization.name %></p>
-                    <p class="event-date"><iconify-icon icon="clarity:date-line"></iconify-icon><%=event.start_date %></p>
+                    <p class="event-date"><iconify-icon icon="clarity:date-line"></iconify-icon><%=event.start_date %> / <%= event.end_date %></p>
                 </div>
                 <div class="event-description">
                     <p><%= event.description %></p>
@@ -22,7 +22,7 @@
             <div class="event-footer">
                 <div class="event-address"><iconify-icon icon="akar-icons:location"></iconify-icon><%= event.address %></div>
                 <% if current_user %>
-                    <% if event.event_participants.where(user: current_user).empty? %> 
+                    <% if event.event_participants.where(user: current_user).empty? %>
                         <%= link_to "Going", event_event_participants_path(event), data: {turbo_method: "post"}, class: 'submit-btn event-footer-button'%>
                     <% else %>
                         <%= link_to "Not Going", event_participant_path(event.event_participants.find_by(user: current_user)), data: {turbo_method: "delete"}, class: 'submit-btn event-footer-button button-cancel' %>
@@ -33,4 +33,4 @@
         </div>
     </div>
 <% end %>
-<%= render "shared/navbar" %>
+ <%= render "shared/navbar_events" %>
