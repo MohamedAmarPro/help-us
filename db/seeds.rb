@@ -363,8 +363,8 @@ event = Event.create(
 )
 
 event2 = Event.create(
-  name: 'Event 2',
-  description: 'Praesent condimentum tortor ligula, at ullamcorper orci interdum nec. Morbi vel eros efficitur, sagittis velit et, dapibus purus. Nam dui dui, vulputate et nulla tristique, ultricies sodales velit. Vestibulum suscipit felis sed varius cursus. Pellentesque habitant morbi tristique senectus et',
+  name: 'Fund Raising',
+  description: 'In this event, we are looking for donations so that we can make more neswpapers so that our homeless people can sell as many as possible',
   start_date: '2022-09-13',
   end_date: '2022-09-12',
   address: 'Center-Park, New-York',
@@ -372,8 +372,8 @@ event2 = Event.create(
 )
 
 event3 = Event.create(
-  name: 'Event 3',
-  description: 'Praesent fringilla dignissim urna eu semper. Vestibulum sapien eros, vulputate mollis elementum id, dictum at ipsum. Ut vel auctor erat. Nam vel varius libero. Morbi justo quam, mattis a ligula faucibus, luctus posuere sapien. Nullam hendrerit posuere lobortis. In vel dui non turpis interdum e',
+  name: 'Need voluntary',
+  description: 'We have decided to create this event in order to find volunteers, during this event your mission will be to distribute as many flyers as possible in order to collect future donations',
   start_date: '2022-10-01',
   end_date: '2022-10-01',
   address: '12 rue Massena, Lille',
@@ -381,12 +381,12 @@ event3 = Event.create(
 )
 
 event4 = Event.create(
-  name: 'Event 4',
-  description: 'Pellentesque ac scelerisque ante, quis vulputate ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. In suscipit tristique ante, vitae convallis massa vulputate in. Aliquam mauris diam, consectetur at accumsan eu, aliquam et lacus. Vest',
+  name: 'Collecting toys & comedians',
+  description: 'For all our childrens in all hospitals, we need to collect many toys so that our childrens can have fun during their hard days in the hospital. If you are a comedians/clowns, we will organize a scene for you to make smile the childrens and make them dream',
   start_date: '2022-09-30',
   end_date: '2022-09-30',
   address: 'Avenue Mohamed V, Marrakech',
-  organization: aim,
+  organization: make_a_wish,
 )
 
 event5 = Event.create(
