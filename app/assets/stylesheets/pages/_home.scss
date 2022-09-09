@@ -4,7 +4,17 @@ body {
 }
 
 h2 {
-  font-style: italic;
+  font-style: normal;
+
+}
+
+.blue-name {
+  color: $newblue;
+}
+
+.boldy {
+  font-family: $desc-font;
+  font-weight: bolder;
 }
 
 .bg{

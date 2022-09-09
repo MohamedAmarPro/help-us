@@ -1,5 +1,5 @@
 <div class="card-organization-new-payment mt-4 mb-3" >
   <%= cl_image_tag organization.photo.key, crop: :fill if organization.photo.attached? %>
-  <p> You have donated <strong><%= humanized_money_with_symbol @donation.amount %></strong> to <%=organization.name %> 🙏🏻 </p>
+  <p> You have donated <strong><%= humanized_money_with_symbol orga_donas.price %></strong> to <%=organization.name %> 🙏🏻 </p>
 
   </div>

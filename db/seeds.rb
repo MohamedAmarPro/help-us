@@ -12,7 +12,7 @@ puts '----------------- FAREWELL PREVIOUS SEEDS---------------------------------
 
 User.destroy_all
 Category.destroy_all
-Organization.destroy_al
+Organization.destroy_all
 
 puts 'Waiting...'
 
@@ -63,7 +63,7 @@ oceans_photo = URI.open('https://images.unsplash.com/photo-1621775639115-ad55c93
 oceans = SubCategory.create(name: "Oceans", category: environment)
 oceans.photo.attach(io: oceans_photo, filename: 'oceans.png', content_type: 'image/png')
 forest_photo = URI.open('https://images.unsplash.com/photo-1535273592342-5c7cea623ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGZvcmVzdCUyMGFtYXpvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60')
-forest = SubCategory.create(name: "Forest", category: environment)
+forest = SubCategory.create(name: "Forests", category: environment)
 forest.photo.attach(io: forest_photo, filename: 'forest.png', content_type: 'image/png')
 cats_photo = URI.open('https://images.unsplash.com/photo-1570824104453-508955ab713e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2F0c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60')
 cats = SubCategory.create(name: "Cats", category: animals)
@@ -81,10 +81,10 @@ painting_photo = URI.open('https://images.unsplash.com/photo-1541753866388-0b3c7
 painting = SubCategory.create(name: "Painting", category: culture)
 painting.photo.attach(io: painting_photo, filename: 'painting.png', content_type: 'image/png')
 drinking_water_photo = URI.open('https://images.unsplash.com/photo-1512925971204-7b6457b669d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxkcmlua2luZyUyMHdhdGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60')
-drinking_water = SubCategory.create(name: "Drinking water", category: humanitarian)
+drinking_water = SubCategory.create(name: "Drinkable water", category: humanitarian)
 drinking_water.photo.attach(io: drinking_water_photo, filename: 'drinking_water.png', content_type: 'image/png')
 famine_photo = URI.open('https://media.sudouest.fr/9522981/1000x500/58178512.jpg?v=1646421425')
-famine = SubCategory.create(name: "Famine", category: humanitarian)
+famine = SubCategory.create(name: "Hunger", category: humanitarian)
 famine.photo.attach(io: famine_photo, filename: 'famine.png', content_type: 'image/png')
 music_photo = URI.open('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60')
 music = SubCategory.create(name: "Music", category: culture)
@@ -93,7 +93,7 @@ illiteracy_photo = URI.open('https://media.istockphoto.com/photos/person-leads-a
 illiteracy = SubCategory.create(name: "Illiteracy", category: education)
 illiteracy.photo.attach(io: illiteracy_photo, filename: 'illiteracy.png', content_type: 'image/png')
 teachers_photo = URI.open('https://images.unsplash.com/photo-1583468982228-19f19164aee2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dGVhY2hlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60')
-teachers = SubCategory.create(name: "Teachers", category: education)
+teachers = SubCategory.create(name: "Teaching", category: education)
 teachers.photo.attach(io: teachers_photo, filename: 'teachers.png', content_type: 'image/png')
 
 puts 'Waiting...'
@@ -123,7 +123,7 @@ reforestaction = Organization.create(
   email: 'contact@reforestaction.org',
   password: 'password',
   name: 'Reforestaction',
-  sub_category: SubCategory.find_by(name: 'Forest'),
+  sub_category: SubCategory.find_by(name: 'Forests'),
   description: 'To preserve, restore and create forests around the world in order to develop their multiple environmental, social and economic benefits over the long term.'
 )
 reforestaction.photo.attach(io: reforestaction_photo, filename: 'reforestaction.png', content_type: 'image/png')
@@ -133,7 +133,7 @@ wwf = Organization.create(
   email: 'contact@wwf.fr',
   password: 'password',
   name: 'WWF',
-  sub_category: SubCategory.find_by(name: "Forest"),
+  sub_category: SubCategory.find_by(name: "Forests"),
   description: 'For 60 years, WWF has worked to help people and nature thrive.
   As the world’s leading conservation organization, WWF works in nearly 100 countries.
   At every level, we collaborate with people around the world to develop and deliver innovative solutions
@@ -187,7 +187,7 @@ planet_water = Organization.create(
   email: 'contact@planet_water.org',
   password: 'password',
   name: 'Planet Water',
-  sub_category: SubCategory.find_by(name: 'Drinking water'),
+  sub_category: SubCategory.find_by(name: 'Drinkable water'),
   description: 'We are a U.S.-based, non-profit organization focused on bringing clean water to the world’s most impoverished communities through the installation of community-based water filtration systems and implementing our Water-Health and Hygiene Education programs. Our projects are focused on schools, children, and rural communities across Asia and Latin America.'
 )
 planet_water.photo.attach(io: planet_water_photo, filename: 'planet_water.png', content_type: 'image/png')
@@ -207,7 +207,7 @@ wfp = Organization.create(
   email: 'contact@wfp.org',
   password: 'password',
   name: 'World Food Program',
-  sub_category: SubCategory.find_by(name: 'Famine'),
+  sub_category: SubCategory.find_by(name: 'Hunger'),
   description: "The World Food Programme is the food-assistance branch of the United Nations.
   It is the world's largest humanitarian organization focused on hunger and food security,
   and the largest provider of school meals. Founded in 1961,
@@ -220,7 +220,7 @@ mercy_corps = Organization.create(
   email: 'contact@mercy-corps.org',
   password: 'password',
   name: 'Mercy Corps',
-  sub_category: SubCategory.find_by(name: 'Famine'),
+  sub_category: SubCategory.find_by(name: 'Hunger'),
   description: 'Mercy Corps is an organization that aims to “alleviate suffering, poverty, and oppression by helping people build secure, productive and just communities.” Their mission is to increase accountability and participation within their partner countries by providing not only aid and supplies but on-the-ground assistance as well. They’re all about working from within to create change! Right now, Mercy Corps has members on the ground in Africa to help families get the food, water, and supplies they need in order to survive'
 )
 mercy_corps.photo.attach(io: mercy_corps_photo, filename: 'mercy_corps.png', content_type: 'image/png')
@@ -250,7 +250,7 @@ nea = Organization.create(
   email: 'contact@nea.org',
   password: 'password',
   name: 'National Education Association',
-  sub_category: SubCategory.find_by(name: 'Teachers'),
+  sub_category: SubCategory.find_by(name: 'Teaching'),
   description: 'Our mission is to advocate for education professionals and to unite our members and the nation to fulfill the promise of public education to prepare every student to succeed in a diverse and interdependent world.'
 )
 nea.photo.attach(io: nea_photo, filename: 'nea.png', content_type: 'image/png')
@@ -259,8 +259,8 @@ nagc_photo = URI.open('https://www.nagc.org/sites/all/themes/nagc/logo.png')
 nagc = Organization.create(
   email: 'contact@nagc.org',
   password: 'password',
-  name: 'National Association for Giften Children',
-  sub_category: SubCategory.find_by(name: 'Teachers'),
+  name: 'National Association for Gifted Children',
+  sub_category: SubCategory.find_by(name: 'Teaching'),
   description: "NAGC's mission is to support those who enhance the growth and development of gifted and talented children through education, advocacy, community building, and research. We aim to help parents and families, K-12 education professionals including support service personnel, and members of the research and higher education community who work to help gifted and talented children as they strive to achieve their personal best and contribute to their communities."
 )
 nagc.photo.attach(io: nagc_photo, filename: 'nagc.png', content_type: 'image/png')
@@ -333,7 +333,7 @@ aim_photo = URI.open('https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Assoc
 aim = Organization.create(
   email: 'contact@aim.org',
   password: 'password',
-  name: 'Association of Independant Music',
+  name: 'Association of Independent Music',
   sub_category: SubCategory.find_by(name: 'Music'),
   description: 'AIM is the not-for-profit trade body exclusively representing the UK’s independent music sector, which makes up a quarter of the recorded music market. Now in its 20th year, AIM’s members range from the largest, most respected record labels and associated music businesses in the world to self-releasing artists and the next generation of entrepreneurs in music. AIM promotes and supports this exciting and diverse sector globally and provides a range of services, commercial opportunities and practical help to members, enabling them to innovate, grow and break into new markets.'
 )

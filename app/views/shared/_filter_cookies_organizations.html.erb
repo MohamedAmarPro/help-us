@@ -1,11 +1,11 @@
 <%= simple_form_for :filter_organizations, url: donations_path do |f|%>
   <div class="top-organization d-flex justify-content-between">
-    <h1 class="welcome"><%= "Available organizations: " %></h1>
+    <h1 class="welcome"><%= "Available organizations" %></h1>
       <%= render "shared/user_photo" %>
   </div>
 
   <% @sub_categories.each do |sub_category| %>
-    <h2 class="mt-4" style="font-size: 22px"><%= sub_category.name %><%= ":" %></h2>
+    <h2 class="mt-4 boldy" style="font-size: 22px"><%= sub_category.name %></h2>
     <%= f.input :organization,
                 legend_tag: false,
                 collection: sub_category.organizations,

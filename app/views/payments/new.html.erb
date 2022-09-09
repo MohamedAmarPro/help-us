@@ -1,14 +1,14 @@
 <div class="container">
 
   <div class="top-organization">
-    <h1 class="welcome"><%= "You are almost there... " %><%= current_user.first_name %></h1>
+    <h1 class="welcome"><%= "You are almost there... " %><span class="blue-name"><%= current_user.first_name %></span> </h1>
     <%= render "shared/user_photo" %>
   </div>
 
 
   <div>
     <% @donation.orga_donas.each do |orga| %>
-      <%= render "shared/organization_new_payment", organization: orga.organization, clickable: false %>
+      <%= render "shared/organization_new_payment", orga_donas: orga, organization: orga.organization, clickable: false %>
       <% end %>
   </div>
 

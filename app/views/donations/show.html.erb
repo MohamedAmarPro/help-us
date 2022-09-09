@@ -3,7 +3,7 @@
 
 
 <div class="top-organization">
-    <h1 class="welcome"><%= "Congratulations" %> <%= current_user.first_name %> <%="your donation has been confirmed"%> </h1>
+    <h1 class="welcome"><%= "Congratulations" %> <span class="blue-name"><%= current_user.first_name %></span> <%="your donation has been confirmed"%> </h1>
 
     <%= render "shared/user_photo_payment" %>
   </div>
