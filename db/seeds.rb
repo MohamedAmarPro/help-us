@@ -12,7 +12,7 @@ puts '----------------- FAREWELL PREVIOUS SEEDS---------------------------------
 
 User.destroy_all
 Category.destroy_all
-Organization.destroy_all
+Organization.destroy_al
 
 puts 'Waiting...'
 
@@ -354,8 +354,8 @@ puts '-------------------- ORGANIZATIONS CREATED -------------------------------
 puts '-------------------- CREATE EVENTS ---------------------------------------------------'
 
 event = Event.create(
-  name: 'Event',
-  description: 'We organize this event to test this index events',
+  name: 'Searching for musicians',
+  description: 'For all of our mental deficiency children, we are looking for musicians to make some class with them, to make them ready for there musical',
   start_date: '2022-09-23',
   end_date: '2022-09-24',
   address: "261 Bd de Tournai, Villeneuve-d'Ascq",
@@ -363,8 +363,8 @@ event = Event.create(
 )
 
 event2 = Event.create(
-  name: 'Event 2',
-  description: 'Praesent condimentum tortor ligula, at ullamcorper orci interdum nec. Morbi vel eros efficitur, sagittis velit et, dapibus purus. Nam dui dui, vulputate et nulla tristique, ultricies sodales velit. Vestibulum suscipit felis sed varius cursus. Pellentesque habitant morbi tristique senectus et',
+  name: 'Fund Raising',
+  description: 'In this event, we are looking for donations so that we can make more neswpapers so that our homeless people can sell as many as possible',
   start_date: '2022-09-13',
   end_date: '2022-09-12',
   address: 'Center-Park, New-York',
@@ -372,8 +372,8 @@ event2 = Event.create(
 )
 
 event3 = Event.create(
-  name: 'Event 3',
-  description: 'Praesent fringilla dignissim urna eu semper. Vestibulum sapien eros, vulputate mollis elementum id, dictum at ipsum. Ut vel auctor erat. Nam vel varius libero. Morbi justo quam, mattis a ligula faucibus, luctus posuere sapien. Nullam hendrerit posuere lobortis. In vel dui non turpis interdum e',
+  name: 'Need Voluntary',
+  description: 'We have decided to create this event in order to find volunteers, during this event your mission will be to distribute as many flyers as possible in order to collect future donations',
   start_date: '2022-10-01',
   end_date: '2022-10-01',
   address: '12 rue Massena, Lille',
@@ -381,30 +381,30 @@ event3 = Event.create(
 )
 
 event4 = Event.create(
-  name: 'Event 4',
-  description: 'Pellentesque ac scelerisque ante, quis vulputate ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. In suscipit tristique ante, vitae convallis massa vulputate in. Aliquam mauris diam, consectetur at accumsan eu, aliquam et lacus. Vest',
+  name: 'Collecting toys & search comedians',
+  description: 'For all our childrens in all hospitals, we need to collect many toys so that our childrens can have fun during their hard days in the hospital. If you are a comedians/clowns, we will organize a scene for you to make smile the childrens and make them dream',
   start_date: '2022-09-30',
   end_date: '2022-09-30',
-  address: 'Avenue Mohamed V, Marrakech',
-  organization: aim,
+  address: '',
+  organization: make_a_wish,
 )
 
 event5 = Event.create(
-  name: 'Event 5',
-  description: 'Quisque mattis ex enim, egestas fermentum nulla egestas et. Fusce eu diam pulvinar, rhoncus nibh nec, interdum urna. Donec nec nulla nec diam vulputate laoreet vel sed tortor. Donec non risus aliquam, ornare est at, sollicitudin felis. Vivamus consequat, leo et luctus hendrerit, erat leo sod',
+  name: 'Clean oceans',
+  description: 'We need all the help possible for clean the beach',
   start_date: '2022-11-11',
   end_date: '2022-11-20',
-  address: '6024 1ère Avenue, Montréal',
+  address: 'Los Angeles, Californie 90292, États-Unis',
   organization: sea_shepherd,
 )
 
 event6 = Event.create(
-  name: 'Event 6',
-  description: 'raesent pulvinar metus justo, sed gravida eros porttitor a. Vivamus nec finibus diam. Sed faucibus tortor eget sem lobortis, in cursus turpis tempor. Phasellus quis libero lobortis, euismod lectus a, lobortis magna. Aenean at nulla faucibus tortor venenatis porttitor blandit ac dolor. Nulla ultri',
+  name: 'Collecting Books',
+  description: 'During this day, we are waiting for collect many books to give them to childrens and help them against illiteracy',
   start_date: '2023-01-12',
   end_date: '2023-01-12',
   address: 'Avenue Mohamed V, Marrakech',
-  organization: make_a_wish,
+  organization: room_to_read,
 )
 
 puts '-------------------- EVENTS CREATED ---------------------------------------------------'
